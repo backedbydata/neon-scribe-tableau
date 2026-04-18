@@ -1,0 +1,2841 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20253.26.0107.1315                               -->
+<workbook original-version='18.1' source-build='2024.2.1 (20242.24.0711.1636)' source-platform='mac' version='18.1' xml:base='https://localhost:8080' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <BasicButtonObject />
+    <CollapsiblePane />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <ParameterAction />
+    <ParameterActionClearSelection />
+    <ParameterDefaultValues />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+    <ZoneFriendlyName />
+    <ZoneVisibilityControl />
+  </document-format-change-manifest>
+  <repository-location derived-from='https://vizhub/workbooks/Multi-FilteringCustomButtonsforTables?rev=1.1' id='Multi-FilteringCustomButtonsforTables' path='/workbooks' revision='1.1' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column alias='Year-to-Date' caption='Date Selection' datatype='integer' name='[Date Selection: Key Opps (copy)_2420403353343156275]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+        <calculation class='tableau' formula='1' />
+        <aliases>
+          <alias key='1' value='Year-to-Date' />
+          <alias key='2' value='Rolling 12-Months' />
+        </aliases>
+        <members>
+          <member alias='Year-to-Date' value='1' />
+          <member alias='Rolling 12-Months' value='2' />
+        </members>
+      </column>
+      <column caption='Date as of (PCP)' datatype='date' default-format='*mmmm yyyy' default-value-field='[federated.0h31tk80yrol7t10wx8is1u438vd].[Calculation_421086621068742662]' name='[Date as of Parameter]' param-domain-type='list' role='measure' source-field='[federated.0h31tk80yrol7t10wx8is1u438vd].[end_date]' type='quantitative' value='#2024-08-14#'>
+        <calculation class='tableau' formula='#2024-08-14#' />
+      </column>
+      <column caption='Employees List: Young with Tenure &gt;10' datatype='boolean' name='[Parameter 16]' param-domain-type='list' role='measure' type='nominal' value='false'>
+        <calculation class='tableau' formula='false' />
+        <members>
+          <member value='true' />
+          <member value='false' />
+        </members>
+      </column>
+      <column caption='Employee List: Performance &lt;3' datatype='boolean' name='[Parameter 17]' param-domain-type='list' role='measure' type='nominal' value='false'>
+        <calculation class='tableau' formula='false' />
+        <members>
+          <member value='true' />
+          <member value='false' />
+        </members>
+      </column>
+      <column caption='Employee List: Lower Rank Promoted' datatype='boolean' name='[Patient List: Acute Visits (copy)_1129559137018077191]' param-domain-type='list' role='measure' type='nominal' value='false'>
+        <calculation class='tableau' formula='false' />
+        <members>
+          <member value='true' />
+          <member value='false' />
+        </members>
+      </column>
+      <column caption='Employee List: No Training' datatype='boolean' name='[Patient List: ED Visits (copy)_1129559137016860677]' param-domain-type='list' role='measure' type='nominal' value='false'>
+        <calculation class='tableau' formula='false' />
+        <members>
+          <member value='true' />
+          <member value='false' />
+        </members>
+      </column>
+      <column caption='Employee List: Absent &gt;10' datatype='boolean' name='[Patient List: No Accountable Visit (copy)_1129559137082429454]' param-domain-type='list' role='measure' type='nominal' value='false'>
+        <calculation class='tableau' formula='false' />
+        <members>
+          <member value='true' />
+          <member value='false' />
+        </members>
+      </column>
+      <column caption='Employee List: High Salary' datatype='boolean' name='[Patient List: Open Interventions (copy)_421086621059874820]' param-domain-type='list' role='measure' type='nominal' value='false'>
+        <calculation class='tableau' formula='false' />
+        <members>
+          <member value='true' />
+          <member value='false' />
+        </members>
+      </column>
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[Patient List: Acute Visits (copy)_1129559137018077191]' palette='Sellers Dorsey' type='palette'>
+            <map to='#8cc0c7'>
+              <bucket>true</bucket>
+            </map>
+            <map to='#eaf0f0'>
+              <bucket>false</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[Patient List: Open Interventions (copy)_421086621059874820]' palette='Sellers Dorsey' type='palette'>
+            <map to='#8cc0c7'>
+              <bucket>true</bucket>
+            </map>
+            <map to='#eaf0f0'>
+              <bucket>false</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[Parameter 16]' palette='Sellers Dorsey' type='palette'>
+            <map to='#8cc0c7'>
+              <bucket>true</bucket>
+            </map>
+            <map to='#eaf0f0'>
+              <bucket>false</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[Patient List: No Accountable Visit (copy)_1129559137082429454]' palette='Sellers Dorsey' type='palette'>
+            <map to='#8cc0c7'>
+              <bucket>true</bucket>
+            </map>
+            <map to='#eaf0f0'>
+              <bucket>false</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[Patient List: ED Visits (copy)_1129559137016860677]' palette='Sellers Dorsey' type='palette'>
+            <map to='#8cc0c7'>
+              <bucket>true</bucket>
+            </map>
+            <map to='#eaf0f0'>
+              <bucket>false</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[Parameter 17]' palette='Sellers Dorsey' type='palette'>
+            <map to='#8cc0c7'>
+              <bucket>true</bucket>
+            </map>
+            <map to='#eaf0f0'>
+              <bucket>false</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+    </datasource>
+    <datasource caption='employee_engagement_kpi_mock_data_adjusted' inline='true' name='federated.0e2q5du0trvxpa1gd2mr60z5zyrg' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='employee_engagement_kpi_mock_data_adjusted' name='textscan.002h5jc0fjf0qj12phu6n0d48kne'>
+            <connection class='textscan' directory='/var/folders/vm/9ct_zxbj4lv6kbjhc5rbplwm0000gn/T/tableau-temp/1379146756/Data/Downloads' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.002h5jc0fjf0qj12phu6n0d48kne' name='employee_engagement_kpi_mock_data_adjusted.csv' table='[employee_engagement_kpi_mock_data_adjusted#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='EmployeeID' ordinal='0' />
+            <column datatype='integer' name='Age' ordinal='1' />
+            <column datatype='string' name='Gender' ordinal='2' />
+            <column datatype='string' name='Department' ordinal='3' />
+            <column datatype='string' name='Position' ordinal='4' />
+            <column datatype='real' name='AnnualSalary' ordinal='5' />
+            <column datatype='integer' name='JobSatisfaction' ordinal='6' />
+            <column datatype='real' name='EngagementScore' ordinal='7' />
+            <column datatype='integer' name='PerformanceRating' ordinal='8' />
+            <column datatype='real' name='AbsenteeismRate' ordinal='9' />
+            <column datatype='integer' name='PromotionInLastYear' ordinal='10' />
+            <column datatype='integer' name='ParticipationInTrainingSessions' ordinal='11' />
+            <column datatype='integer' name='Tenure' ordinal='12' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[employee_engagement_kpi_mock_data_adjusted.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EmployeeID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[EmployeeID]</local-name>
+            <parent-name>[employee_engagement_kpi_mock_data_adjusted.csv]</parent-name>
+            <remote-alias>EmployeeID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[employee_engagement_kpi_mock_data_adjusted.csv_C897FDA5E58C442A9DBF09EAAAC04107]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Age]</local-name>
+            <parent-name>[employee_engagement_kpi_mock_data_adjusted.csv]</parent-name>
+            <remote-alias>Age</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[employee_engagement_kpi_mock_data_adjusted.csv_C897FDA5E58C442A9DBF09EAAAC04107]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Gender]</local-name>
+            <parent-name>[employee_engagement_kpi_mock_data_adjusted.csv]</parent-name>
+            <remote-alias>Gender</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[employee_engagement_kpi_mock_data_adjusted.csv_C897FDA5E58C442A9DBF09EAAAC04107]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Department</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Department]</local-name>
+            <parent-name>[employee_engagement_kpi_mock_data_adjusted.csv]</parent-name>
+            <remote-alias>Department</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[employee_engagement_kpi_mock_data_adjusted.csv_C897FDA5E58C442A9DBF09EAAAC04107]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Position</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Position]</local-name>
+            <parent-name>[employee_engagement_kpi_mock_data_adjusted.csv]</parent-name>
+            <remote-alias>Position</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[employee_engagement_kpi_mock_data_adjusted.csv_C897FDA5E58C442A9DBF09EAAAC04107]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AnnualSalary</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AnnualSalary]</local-name>
+            <parent-name>[employee_engagement_kpi_mock_data_adjusted.csv]</parent-name>
+            <remote-alias>AnnualSalary</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[employee_engagement_kpi_mock_data_adjusted.csv_C897FDA5E58C442A9DBF09EAAAC04107]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>JobSatisfaction</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[JobSatisfaction]</local-name>
+            <parent-name>[employee_engagement_kpi_mock_data_adjusted.csv]</parent-name>
+            <remote-alias>JobSatisfaction</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[employee_engagement_kpi_mock_data_adjusted.csv_C897FDA5E58C442A9DBF09EAAAC04107]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EngagementScore</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[EngagementScore]</local-name>
+            <parent-name>[employee_engagement_kpi_mock_data_adjusted.csv]</parent-name>
+            <remote-alias>EngagementScore</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[employee_engagement_kpi_mock_data_adjusted.csv_C897FDA5E58C442A9DBF09EAAAC04107]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PerformanceRating</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PerformanceRating]</local-name>
+            <parent-name>[employee_engagement_kpi_mock_data_adjusted.csv]</parent-name>
+            <remote-alias>PerformanceRating</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[employee_engagement_kpi_mock_data_adjusted.csv_C897FDA5E58C442A9DBF09EAAAC04107]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AbsenteeismRate</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AbsenteeismRate]</local-name>
+            <parent-name>[employee_engagement_kpi_mock_data_adjusted.csv]</parent-name>
+            <remote-alias>AbsenteeismRate</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[employee_engagement_kpi_mock_data_adjusted.csv_C897FDA5E58C442A9DBF09EAAAC04107]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PromotionInLastYear</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PromotionInLastYear]</local-name>
+            <parent-name>[employee_engagement_kpi_mock_data_adjusted.csv]</parent-name>
+            <remote-alias>PromotionInLastYear</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[employee_engagement_kpi_mock_data_adjusted.csv_C897FDA5E58C442A9DBF09EAAAC04107]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ParticipationInTrainingSessions</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ParticipationInTrainingSessions]</local-name>
+            <parent-name>[employee_engagement_kpi_mock_data_adjusted.csv]</parent-name>
+            <remote-alias>ParticipationInTrainingSessions</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[employee_engagement_kpi_mock_data_adjusted.csv_C897FDA5E58C442A9DBF09EAAAC04107]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Tenure</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Tenure]</local-name>
+            <parent-name>[employee_engagement_kpi_mock_data_adjusted.csv]</parent-name>
+            <remote-alias>Tenure</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[employee_engagement_kpi_mock_data_adjusted.csv_C897FDA5E58C442A9DBF09EAAAC04107]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Absenteeism Rate' datatype='real' name='[AbsenteeismRate]' role='measure' type='quantitative' />
+      <column caption='Annual Salary' datatype='real' default-format='c&quot;$&quot;#,##0;-&quot;$&quot;#,##0' name='[AnnualSalary]' role='measure' type='quantitative' />
+      <column caption='True' datatype='boolean' name='[Calculation_104849431753039872]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='TRUE' />
+      </column>
+      <column caption='False' datatype='boolean' name='[Calculation_104849431753080833]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='FALSE' />
+      </column>
+      <column caption='Recently Promoted' datatype='string' name='[Calculation_108579012702625792]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IIF([PromotionInLastYear]=1,&apos;Yes&apos;, &apos;No&apos;)' />
+      </column>
+      <column caption='Employees Tenure&gt;5 and Age &lt;30' datatype='boolean' name='[Calculation_1129559137008394240]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 16]=FALSE OR&#10;&#10;([Parameters].[Parameter 16] AND [Tenure]&gt;5 AND [Age]&lt;30)&#10;&#10;/*&#10;CASE [Employees List: Young with Tenure &gt;10]&#10;WHEN TRUE THEN&#10;    IF [Tenure]&gt;5&#10;    AND [Age]&lt;30&#10;    THEN TRUE ELSE FALSE END&#10;WHEN FALSE THEN TRUE&#10;END&#10;*/' />
+      </column>
+      <column caption='Salary Bands' datatype='string' name='[Calculation_159033402293936128]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [AnnualSalary]&lt;50000 THEN &apos;&lt;$50,000&apos;&#10;ELSEIF [AnnualSalary]&lt;75000 THEN &apos;$50,000-$74,999&apos;&#10;ELSEIF [AnnualSalary]&lt;100000 THEN &apos;$75,000-$100,000&apos;&#10;ELSE &apos;$100,000+&apos; END' />
+      </column>
+      <column caption='Employees Low Performance' datatype='boolean' name='[Calculation_421086621054783490]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 17]=FALSE OR&#10;&#10;([Parameters].[Parameter 17] AND [PerformanceRating]&lt;3)&#10;&#10;/*&#10;CASE [Employee List: Performance &lt;3]&#13;&#10;WHEN TRUE THEN&#13;&#10;    IF [Performance Rating]&lt;3&#13;&#10;    THEN TRUE ELSE FALSE END&#13;&#10;WHEN FALSE THEN TRUE&#13;&#10;END&#10;*/' />
+      </column>
+      <column caption='Max Date' datatype='date' name='[Calculation_421086621068742662]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='{MAX(TODAY())}' />
+      </column>
+      <column caption='Deselect' datatype='string' name='[Calculation_4638003988735442965]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='&apos;&apos;&#10;&#10;//used in highlight action to deselect the expand button&#10;//and the incomplete and complete buttons' />
+      </column>
+      <column caption='Employee ID' datatype='string' name='[EmployeeID]' role='dimension' type='nominal' />
+      <column caption='Employees Absent (copy)' datatype='boolean' name='[Employees Absent (copy)_4683743618240409603]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE [Parameters].[Patient List: No Accountable Visit (copy)_1129559137082429454]&#10;WHEN TRUE THEN FALSE&#10;WHEN FALSE THEN TRUE&#10;END' />
+      </column>
+      <column caption='Employees Low Performance (copy)' datatype='boolean' name='[Employees Low Performance (copy)_104849431757533186]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE [Parameters].[Parameter 17]&#13;&#10;WHEN TRUE THEN FALSE&#13;&#10;WHEN FALSE THEN TRUE&#13;&#10;END' />
+      </column>
+      <column caption='Employees No Training (copy)' datatype='boolean' name='[Employees No Training (copy)_4683743618240344066]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE [Parameters].[Patient List: ED Visits (copy)_1129559137016860677]&#10;WHEN TRUE THEN FALSE&#10;WHEN FALSE THEN TRUE&#10;END' />
+      </column>
+      <column caption='Employees Promoted Analyst (copy)' datatype='boolean' name='[Employees Promoted from Lower Rank (copy)_104849431758675971]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE [Parameters].[Patient List: Acute Visits (copy)_1129559137018077191]&#13;&#10;WHEN TRUE THEN FALSE&#13;&#10;WHEN FALSE THEN TRUE&#13;&#10;END' />
+      </column>
+      <column caption='Employees Tenure&gt;5 and Age &lt;30 (copy)' datatype='boolean' name='[Employees Tenure&gt;10 and Age &lt;35 (copy)_4683743618239602688]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE [Parameters].[Parameter 16]&#10;WHEN TRUE THEN FALSE&#10;WHEN FALSE THEN TRUE&#10;END' />
+      </column>
+      <column caption='Employees with Salary &gt;$100K (copy)' datatype='boolean' name='[Employees with Salary &gt;$100K (copy)_4683743618240462852]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE [Parameters].[Patient List: Open Interventions (copy)_421086621059874820]&#10;WHEN TRUE THEN FALSE&#10;WHEN FALSE THEN TRUE&#10;END' />
+      </column>
+      <column caption='Engagement Score' datatype='real' name='[EngagementScore]' role='measure' type='quantitative' />
+      <column caption='Job Satisfaction' datatype='integer' name='[JobSatisfaction]' role='measure' type='quantitative' />
+      <column caption='Participation In Training Sessions' datatype='integer' name='[ParticipationInTrainingSessions]' role='measure' type='quantitative' />
+      <column caption='Employees Absent' datatype='boolean' name='[Patients no Accountable Visit (copy)_1129559137082482703]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE [Parameters].[Patient List: No Accountable Visit (copy)_1129559137082429454]&#10;WHEN TRUE THEN&#10;    IF [AbsenteeismRate]&gt;10&#10;    THEN TRUE ELSE FALSE END&#10;WHEN FALSE THEN TRUE&#10;END' />
+      </column>
+      <column caption='Employees Promoted Analysts' datatype='boolean' name='[Patients with Acute Visit no PCP (copy)_1129559137018146824]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE [Parameters].[Patient List: Acute Visits (copy)_1129559137018077191]&#13;&#10;WHEN TRUE THEN&#13;&#10;    IF [PromotionInLastYear]=1&#13;&#10;    AND ([Position]=&apos;Senior Analyst&apos; OR [Position]=&apos;Analyst&apos;)&#13;&#10;    THEN TRUE ELSE FALSE END&#13;&#10;WHEN FALSE THEN TRUE&#13;&#10;END' />
+      </column>
+      <column caption='Employees with Salary &gt;$100K' datatype='boolean' name='[Patients with Acute Visit no PCP (copy)_421086621059940357]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE [Parameters].[Patient List: Open Interventions (copy)_421086621059874820]&#13;&#10;WHEN TRUE THEN&#13;&#10;    IF [AnnualSalary]&gt;100000&#13;&#10;    THEN TRUE ELSE FALSE END&#13;&#10;WHEN FALSE THEN TRUE&#13;&#10;END' />
+      </column>
+      <column caption='Employees No Training' datatype='boolean' name='[Patients with ED Visit no PCP (copy)_1129559137016930310]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Patient List: ED Visits (copy)_1129559137016860677]=FALSE OR&#10;&#10;([Parameters].[Patient List: ED Visits (copy)_1129559137016860677] AND [ParticipationInTrainingSessions]=0)&#10;&#10;/*&#10;CASE [Employee List: No Training]&#13;&#10;WHEN TRUE THEN&#13;&#10;    IF [Participation In Training Sessions]=0 &#13;&#10;    THEN TRUE ELSE FALSE END&#13;&#10;WHEN FALSE THEN TRUE&#13;&#10;END&#10;*/' />
+      </column>
+      <column caption='Performance Rating' datatype='integer' name='[PerformanceRating]' role='measure' type='quantitative' />
+      <column caption='Promotion In Last Year' datatype='integer' name='[PromotionInLastYear]' role='dimension' type='quantitative' />
+      <column caption='employee_engagement_kpi_mock_data_adjusted.csv' datatype='table' name='[__tableau_internal_object_id__].[employee_engagement_kpi_mock_data_adjusted.csv_C897FDA5E58C442A9DBF09EAAAC04107]' role='measure' type='quantitative' />
+      <column-instance column='[Calculation_108579012702625792]' derivation='None' name='[none:Calculation_108579012702625792:nk]' pivot='key' type='nominal' />
+      <group caption='Action (False)' hidden='true' name='[Action (False)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_104849431753080833]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Physician)' hidden='true' name='[Action (Physician)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_9052587134014763016]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (True)' hidden='true' name='[Action (True)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_104849431753039872]' />
+        </groupfilter>
+      </group>
+      <group hidden='true' name='[Inclusions (lob,p.Date Selection Shortened Text)]' name-style='unqualified' user:auto-column='include'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:lob:nk]' />
+          <groupfilter function='level-members' level='[none:p.Date Selection Full Text (copy)_939563531624902656:nk]' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/tableau-temp/TEMP_0bmt3dd1qyo3uw1c2l7ks18afzjj.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='08/15/2024 05:11:23 PM' updated-database='/var/folders/vm/9ct_zxbj4lv6kbjhc5rbplwm0000gn/T/tableau-temp/3196265656/Data/Multi-Parameter Custom Lists.twb Files/federated.hyper'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='employee_engagement_kpi_mock_data_adjusted' increment-value='%null%' refresh-type='create' rows-inserted='1000' timestamp-start='2024-08-15 17:11:23.700' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>EmployeeID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[EmployeeID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EmployeeID</remote-alias>
+              <ordinal>0</ordinal>
+              <family>employee_engagement_kpi_mock_data_adjusted.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1000</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Age</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Age]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Age</remote-alias>
+              <ordinal>1</ordinal>
+              <family>employee_engagement_kpi_mock_data_adjusted.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>47</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Gender</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Gender]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Gender</remote-alias>
+              <ordinal>2</ordinal>
+              <family>employee_engagement_kpi_mock_data_adjusted.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Department</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Department]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Department</remote-alias>
+              <ordinal>3</ordinal>
+              <family>employee_engagement_kpi_mock_data_adjusted.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Position</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Position]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Position</remote-alias>
+              <ordinal>4</ordinal>
+              <family>employee_engagement_kpi_mock_data_adjusted.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AnnualSalary</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[AnnualSalary]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AnnualSalary</remote-alias>
+              <ordinal>5</ordinal>
+              <family>employee_engagement_kpi_mock_data_adjusted.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1000</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>JobSatisfaction</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[JobSatisfaction]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>JobSatisfaction</remote-alias>
+              <ordinal>6</ordinal>
+              <family>employee_engagement_kpi_mock_data_adjusted.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>EngagementScore</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[EngagementScore]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EngagementScore</remote-alias>
+              <ordinal>7</ordinal>
+              <family>employee_engagement_kpi_mock_data_adjusted.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>101</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PerformanceRating</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[PerformanceRating]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PerformanceRating</remote-alias>
+              <ordinal>8</ordinal>
+              <family>employee_engagement_kpi_mock_data_adjusted.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AbsenteeismRate</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[AbsenteeismRate]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AbsenteeismRate</remote-alias>
+              <ordinal>9</ordinal>
+              <family>employee_engagement_kpi_mock_data_adjusted.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>810</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PromotionInLastYear</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[PromotionInLastYear]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PromotionInLastYear</remote-alias>
+              <ordinal>10</ordinal>
+              <family>employee_engagement_kpi_mock_data_adjusted.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ParticipationInTrainingSessions</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ParticipationInTrainingSessions]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ParticipationInTrainingSessions</remote-alias>
+              <ordinal>11</ordinal>
+              <family>employee_engagement_kpi_mock_data_adjusted.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Tenure</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Tenure]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Tenure</remote-alias>
+              <ordinal>12</ordinal>
+              <family>employee_engagement_kpi_mock_data_adjusted.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>46</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout common-percentage='0.714286' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.285714' show-structure='true' user-set-layout-v2='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#0f5db8'>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Acute Admits per 1,000 Provider (copy)_1144758769305079822:qk]&quot;</bucket>
+            </map>
+            <map to='#0f5db8'>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Chronic Condition Potential Coding Opportunities Provider (copy)_1144758769306918929:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:high_risk_pcp_visits_per_1000_numer_provider:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:low_risk_pcp_visits_provider:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Acute Admits per 1,000 Provider (copy)_1144758769309417494:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1126744380539097104:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1126744380540645393:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1126744380540755986:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:PCP Visits per 1,000 Provider (copy)_1141944021209161742:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:PCP Visits per 1,000 Provider High Risk (copy)_1141944021209329679:qk]&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:PCP Visits per 1,000 Comparison 1 (copy)_1144758769309827096:qk]&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:PCP Visits per 1,000 Provider (copy)_1144758769309687831:qk]&quot;</bucket>
+            </map>
+            <map to='#c0c0c0'>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Chronic Condition Potential Coding Opportunities Comparison 1 (copy)_1144758769305489424:qk]&quot;</bucket>
+            </map>
+            <map to='#c0c0c0'>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Chronic Condition Potential Coding Opportunities Provider (copy)_1144758769305317391:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1126744380537733134:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <default-sorts>
+        <manual-sort column='[none:Calculation_108579012702625792:nk]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;Yes&quot;</bucket>
+            <bucket>&quot;No&quot;</bucket>
+          </dictionary>
+        </manual-sort>
+      </default-sorts>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='EmployeeID' />
+        <field-sort-custom-order field='Age' />
+        <field-sort-custom-order field='Gender' />
+        <field-sort-custom-order field='Department' />
+        <field-sort-custom-order field='Position' />
+        <field-sort-custom-order field='AnnualSalary' />
+        <field-sort-custom-order field='Calculation_159033402293936128' />
+        <field-sort-custom-order field='JobSatisfaction' />
+        <field-sort-custom-order field='EngagementScore' />
+        <field-sort-custom-order field='PerformanceRating' />
+        <field-sort-custom-order field='AbsenteeismRate' />
+        <field-sort-custom-order field='PromotionInLastYear' />
+        <field-sort-custom-order field='Calculation_108579012702625792' />
+        <field-sort-custom-order field='ParticipationInTrainingSessions' />
+        <field-sort-custom-order field='Tenure' />
+        <field-sort-custom-order field='Calculation_104849431753039872' />
+        <field-sort-custom-order field='Calculation_104849431753080833' />
+        <field-sort-custom-order field='Calculation_1129559137008394240' />
+        <field-sort-custom-order field='Calculation_421086621054783490' />
+        <field-sort-custom-order field='Calculation_4638003988735442965' />
+        <field-sort-custom-order field='Employees Absent (copy)_4683743618240409603' />
+        <field-sort-custom-order field='Employees Low Performance (copy)_104849431757533186' />
+        <field-sort-custom-order field='Employees No Training (copy)_4683743618240344066' />
+        <field-sort-custom-order field='Employees Promoted from Lower Rank (copy)_104849431758675971' />
+        <field-sort-custom-order field='Employees Tenure&gt;10 and Age &lt;35 (copy)_4683743618239602688' />
+        <field-sort-custom-order field='Employees with Salary &gt;$100K (copy)_4683743618240462852' />
+        <field-sort-custom-order field='Patients no Accountable Visit (copy)_1129559137082482703' />
+        <field-sort-custom-order field='Patients with Acute Visit no PCP (copy)_1129559137018146824' />
+        <field-sort-custom-order field='Patients with Acute Visit no PCP (copy)_421086621059940357' />
+        <field-sort-custom-order field='Patients with ED Visit no PCP (copy)_1129559137016930310' />
+        <field-sort-custom-order field='Geometry (generated)' />
+        <field-sort-custom-order field='Latitude (generated)' />
+        <field-sort-custom-order field='Longitude (generated)' />
+        <field-sort-custom-order field=':Measure Names' />
+        <field-sort-custom-order field='Multiple Values' />
+      </field-sort-info>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Employees List: Young with Tenure &gt;10' datatype='boolean' name='[Parameter 16]' param-domain-type='list' role='measure' type='nominal' value='false'>
+          <calculation class='tableau' formula='false' />
+        </column>
+        <column caption='Employee List: Performance &lt;3' datatype='boolean' name='[Parameter 17]' param-domain-type='list' role='measure' type='nominal' value='false'>
+          <calculation class='tableau' formula='false' />
+        </column>
+        <column caption='Employee List: Lower Rank Promoted' datatype='boolean' name='[Patient List: Acute Visits (copy)_1129559137018077191]' param-domain-type='list' role='measure' type='nominal' value='false'>
+          <calculation class='tableau' formula='false' />
+        </column>
+        <column caption='Employee List: No Training' datatype='boolean' name='[Patient List: ED Visits (copy)_1129559137016860677]' param-domain-type='list' role='measure' type='nominal' value='false'>
+          <calculation class='tableau' formula='false' />
+        </column>
+        <column caption='Employee List: Absent &gt;10' datatype='boolean' name='[Patient List: No Accountable Visit (copy)_1129559137082429454]' param-domain-type='list' role='measure' type='nominal' value='false'>
+          <calculation class='tableau' formula='false' />
+        </column>
+        <column caption='Employee List: High Salary' datatype='boolean' name='[Patient List: Open Interventions (copy)_421086621059874820]' param-domain-type='list' role='measure' type='nominal' value='false'>
+          <calculation class='tableau' formula='false' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='employee_engagement_kpi_mock_data_adjusted.csv' id='employee_engagement_kpi_mock_data_adjusted.csv_C897FDA5E58C442A9DBF09EAAAC04107'>
+            <properties context=''>
+              <relation connection='textscan.002h5jc0fjf0qj12phu6n0d48kne' name='employee_engagement_kpi_mock_data_adjusted.csv' table='[employee_engagement_kpi_mock_data_adjusted#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='EmployeeID' ordinal='0' />
+                  <column datatype='integer' name='Age' ordinal='1' />
+                  <column datatype='string' name='Gender' ordinal='2' />
+                  <column datatype='string' name='Department' ordinal='3' />
+                  <column datatype='string' name='Position' ordinal='4' />
+                  <column datatype='real' name='AnnualSalary' ordinal='5' />
+                  <column datatype='integer' name='JobSatisfaction' ordinal='6' />
+                  <column datatype='real' name='EngagementScore' ordinal='7' />
+                  <column datatype='integer' name='PerformanceRating' ordinal='8' />
+                  <column datatype='real' name='AbsenteeismRate' ordinal='9' />
+                  <column datatype='integer' name='PromotionInLastYear' ordinal='10' />
+                  <column datatype='integer' name='ParticipationInTrainingSessions' ordinal='11' />
+                  <column datatype='integer' name='Tenure' ordinal='12' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Team Links (Team URLs)' inline='true' name='federated.1l76axc0e7rztd1ct9tqn0ia4zyk' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Team URLs' name='excel-direct.1objwzg0cyy0j3103p5sp0j8zqks'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' interpretationMode='0' validate='no' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.1objwzg0cyy0j3103p5sp0j8zqks' name='Team Links' table='[&apos;Team Links$&apos;]' type='table'>
+          <columns gridOrigin='A1:B6:no:A1:B6:0' header='yes' outcome='6'>
+            <column datatype='string' name='Name' ordinal='0' />
+            <column datatype='string' name='URL' ordinal='1' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Team Links]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:B6:no:A1:B6:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Name]</local-name>
+            <parent-name>[Team Links]</parent-name>
+            <remote-alias>Name</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Team Links_12BE2220B8484C308190ED6C1AB975C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>URL</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[URL]</local-name>
+            <parent-name>[Team Links]</parent-name>
+            <remote-alias>URL</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Team Links_12BE2220B8484C308190ED6C1AB975C7]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Name]' role='dimension' type='nominal' />
+      <column caption='Team Links' datatype='table' name='[__tableau_internal_object_id__].[Team Links_12BE2220B8484C308190ED6C1AB975C7]' role='measure' type='quantitative' />
+      <column-instance column='[Name]' derivation='None' name='[none:Name:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/tableau-temp/TEMP_1s60que1ysf7dn16c7es51bantt6.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='12/18/2023 02:52:58 PM' updated-database='/var/folders/vm/9ct_zxbj4lv6kbjhc5rbplwm0000gn/T/tableau-temp/3196265656/Data/Clever Ways to Use Indicator Icons.twb Files/federated 2.hyper'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='Team Links (Team URLs)' increment-value='%null%' refresh-type='create' rows-inserted='5' timestamp-start='2023-12-18 14:52:57.817' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Name</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Team Links</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>URL</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[URL]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>URL</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Team Links</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1l76axc0e7rztd1ct9tqn0ia4zyk].[usr:Calculation_4765301019302776842:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1l76axc0e7rztd1ct9tqn0ia4zyk].[usr:Calculation_4765301019302961163:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1l76axc0e7rztd1ct9tqn0ia4zyk].[usr:Calculation_4765301019303018508:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1l76axc0e7rztd1ct9tqn0ia4zyk].[usr:Calculation_4765301019303837710:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1l76axc0e7rztd1ct9tqn0ia4zyk].[usr:Calculation_4765301019303997455:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1l76axc0e7rztd1ct9tqn0ia4zyk].[usr:Calculation_4765301019304202256:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1l76axc0e7rztd1ct9tqn0ia4zyk].[usr:Calculation_4765301019304263697:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1l76axc0e7rztd1ct9tqn0ia4zyk].[usr:Calculation_4765301019302686728:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1l76axc0e7rztd1ct9tqn0ia4zyk].[usr:Calculation_4765301019303067661:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='shape' field='[none:Name:nk]' palette='HDV' type='shape'>
+            <map to='HDV/LindsayTeal.png'>
+              <bucket>&quot;Lindsay Betzendahl&quot;</bucket>
+            </map>
+            <map to='asterisk'>
+              <bucket>&quot;Robert Rotzin&quot;</bucket>
+            </map>
+            <map to='circle'>
+              <bucket>&quot;Dan Benevento&quot;</bucket>
+            </map>
+            <map to='plus'>
+              <bucket>&quot;Katie Bueno&quot;</bucket>
+            </map>
+            <map to='square'>
+              <bucket>&quot;Janet Steeger&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Team Links' id='Team Links_12BE2220B8484C308190ED6C1AB975C7'>
+            <properties context=''>
+              <relation connection='excel-direct.1objwzg0cyy0j3103p5sp0j8zqks' name='Team Links' table='[&apos;Team Links$&apos;]' type='table'>
+                <columns gridOrigin='A1:B6:no:A1:B6:0' header='yes' outcome='6'>
+                  <column datatype='string' name='Name' ordinal='0' />
+                  <column datatype='string' name='URL' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <datasource-relationships>
+    <datasource-relationship source='federated.0e2q5du0trvxpa1gd2mr60z5zyrg' target='federated.0e2q5du0trvxpa1gd2mr60z5zyrg'>
+      <column-mapping />
+    </datasource-relationship>
+  </datasource-relationships>
+  <actions>
+    <action caption='Clear Training 1' name='[Action18_180D6B02E37E4B588E794152F6B2DEA3]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Multi-Filtering Buttons for Tables' type='sheet' worksheet='List: Button Training' />
+      <link caption='Clear Training 1' delimiter=',' escape='\' expression='tsl:List%3A%20Button%20Training?%5Bfederated.0e2q5du0trvxpa1gd2mr60z5zyrg%5D.%5BCalculation_104849431753039872%5D~s0=&lt;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Calculation_104849431753080833]~na&gt;' include-null='true' multi-select='true' url-escape='true' />
+      <command command='tsc:tsl-filter'>
+        <param name='target' value='List: Button Training' />
+      </command>
+    </action>
+    <action caption='Clear Performance 1' name='[Action20_D31E4EF1C41342A393561F9D772E074D]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Multi-Filtering Buttons for Tables' type='sheet' worksheet='List: Button Performance' />
+      <link caption='Clear Performance 1' delimiter=',' escape='\' expression='tsl:List%3A%20Button%20Performance?%5Bfederated.0e2q5du0trvxpa1gd2mr60z5zyrg%5D.%5BCalculation_104849431753039872%5D~s0=&lt;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Calculation_104849431753080833]~na&gt;' include-null='true' multi-select='true' url-escape='true' />
+      <command command='tsc:tsl-filter'>
+        <param name='target' value='List: Button Performance' />
+      </command>
+    </action>
+    <action caption='Clear Absent 1' name='[Action21_30D0116903814DD0AB47D79F08605A14]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Multi-Filtering Buttons for Tables' type='sheet' worksheet='List: Button Absent' />
+      <link caption='Clear Absent 1' delimiter=',' escape='\' expression='tsl:List%3A%20Button%20Absent?%5Bfederated.0e2q5du0trvxpa1gd2mr60z5zyrg%5D.%5BCalculation_104849431753039872%5D~s0=&lt;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Calculation_104849431753080833]~na&gt;' include-null='true' multi-select='true' url-escape='true' />
+      <command command='tsc:tsl-filter'>
+        <param name='target' value='List: Button Absent' />
+      </command>
+    </action>
+    <action caption='Clear Tenure 1' name='[Action22_BDA5AAC22F2A4D078B96A085A7E9443C]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Multi-Filtering Buttons for Tables' type='sheet' worksheet='List: Button Tenure' />
+      <link caption='Clear Tenure 1' delimiter=',' escape='\' expression='tsl:List%3A%20Button%20Tenure?%5Bfederated.0e2q5du0trvxpa1gd2mr60z5zyrg%5D.%5BCalculation_104849431753039872%5D~s0=&lt;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Calculation_104849431753080833]~na&gt;' include-null='true' multi-select='true' url-escape='true' />
+      <command command='tsc:tsl-filter'>
+        <param name='target' value='List: Button Tenure' />
+      </command>
+    </action>
+    <action caption='Clear Salary 1' name='[Action23_D3C8B8ACEFF74A5EA3F90B3B25A6BC9E]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Multi-Filtering Buttons for Tables' type='sheet' worksheet='List: Button Salary' />
+      <link caption='Clear Salary 1' delimiter=',' escape='\' expression='tsl:List%3A%20Button%20Salary?%5Bfederated.0e2q5du0trvxpa1gd2mr60z5zyrg%5D.%5BCalculation_104849431753039872%5D~s0=&lt;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Calculation_104849431753080833]~na&gt;' include-null='true' multi-select='true' url-escape='true' />
+      <command command='tsc:tsl-filter'>
+        <param name='target' value='List: Button Salary' />
+      </command>
+    </action>
+    <action caption='Clear Promotion 1' name='[Action24_F1DD1285A620434AAD6FC65CD5520E7D]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Multi-Filtering Buttons for Tables' type='sheet' worksheet='List: Button Promoted' />
+      <link caption='Clear Promotion 1' delimiter=',' escape='\' expression='tsl:List%3A%20Button%20Promoted?%5Bfederated.0e2q5du0trvxpa1gd2mr60z5zyrg%5D.%5BCalculation_104849431753039872%5D~s0=&lt;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Calculation_104849431753080833]~na&gt;' include-null='true' multi-select='true' url-escape='true' />
+      <command command='tsc:tsl-filter'>
+        <param name='target' value='List: Button Promoted' />
+      </command>
+    </action>
+    <datasources>
+      <datasource caption='employee_engagement_kpi_mock_data_adjusted' name='federated.0e2q5du0trvxpa1gd2mr60z5zyrg' />
+    </datasources>
+    <datasource-dependencies datasource='federated.0e2q5du0trvxpa1gd2mr60z5zyrg'>
+      <column caption='True' datatype='boolean' name='[Calculation_104849431753039872]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='TRUE' />
+      </column>
+      <column caption='False' datatype='boolean' name='[Calculation_104849431753080833]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='FALSE' />
+      </column>
+    </datasource-dependencies>
+    <edit-parameter-action caption='Performance 1' name='[Action13_F32F12BAD795429F949E14187835BF3B]'>
+      <activation type='on-select' />
+      <source dashboard='Multi-Filtering Buttons for Tables' type='sheet' worksheet='List: Button Performance' />
+      <agg-type type='attr' />
+      <clear-option type='do-nothing' value='b:false' />
+      <params>
+        <param name='source-field' value='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees Low Performance (copy)_104849431757533186:nk]' />
+        <param name='target-parameter' value='[Parameters].[Parameter 17]' />
+      </params>
+    </edit-parameter-action>
+    <edit-parameter-action caption='Absent 1' name='[Action14_ACD8D493F61A4255AD08BA3432E70B57]'>
+      <activation type='on-select' />
+      <source dashboard='Multi-Filtering Buttons for Tables' type='sheet' worksheet='List: Button Absent' />
+      <agg-type type='attr' />
+      <clear-option type='do-nothing' value='b:false' />
+      <params>
+        <param name='source-field' value='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees Absent (copy)_4683743618240409603:nk]' />
+        <param name='target-parameter' value='[Parameters].[Patient List: No Accountable Visit (copy)_1129559137082429454]' />
+      </params>
+    </edit-parameter-action>
+    <edit-parameter-action caption='Salary 1' name='[Action15_C1D22C0DCA3F47CF99EF8DC95423BF77]'>
+      <activation type='on-select' />
+      <source dashboard='Multi-Filtering Buttons for Tables' type='sheet' worksheet='List: Button Salary' />
+      <agg-type type='attr' />
+      <clear-option type='do-nothing' value='b:false' />
+      <params>
+        <param name='source-field' value='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees with Salary &gt;$100K (copy)_4683743618240462852:nk]' />
+        <param name='target-parameter' value='[Parameters].[Patient List: Open Interventions (copy)_421086621059874820]' />
+      </params>
+    </edit-parameter-action>
+    <edit-parameter-action caption='Promoted 1' name='[Action16_8E99E383F02146E381C17DC9EA0524E8]'>
+      <activation type='on-select' />
+      <source dashboard='Multi-Filtering Buttons for Tables' type='sheet' worksheet='List: Button Promoted' />
+      <agg-type type='attr' />
+      <clear-option type='assign-fixed-value' value='b:false' />
+      <params>
+        <param name='source-field' value='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees Promoted from Lower Rank (copy)_104849431758675971:nk]' />
+        <param name='target-parameter' value='[Parameters].[Patient List: Acute Visits (copy)_1129559137018077191]' />
+      </params>
+    </edit-parameter-action>
+    <edit-parameter-action caption='Tenure 1' name='[Action17_FDAB5E15BFED4B50B6B99D922404EA0A]'>
+      <activation type='on-select' />
+      <source dashboard='Multi-Filtering Buttons for Tables' type='sheet' worksheet='List: Button Tenure' />
+      <agg-type type='attr' />
+      <clear-option type='do-nothing' value='b:false' />
+      <params>
+        <param name='source-field' value='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees Tenure&gt;10 and Age &lt;35 (copy)_4683743618239602688:nk]' />
+        <param name='target-parameter' value='[Parameters].[Parameter 16]' />
+      </params>
+    </edit-parameter-action>
+    <edit-parameter-action caption='Training 1' name='[Action19_ED69971C894C47BD8C937F773E0805D9]'>
+      <activation type='on-select' />
+      <source dashboard='Multi-Filtering Buttons for Tables' type='sheet' worksheet='List: Button Training' />
+      <agg-type type='attr' />
+      <clear-option type='do-nothing' value='b:false' />
+      <params>
+        <param name='source-field' value='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees No Training (copy)_4683743618240344066:nk]' />
+        <param name='target-parameter' value='[Parameters].[Patient List: ED Visits (copy)_1129559137016860677]' />
+      </params>
+    </edit-parameter-action>
+  </actions>
+  <worksheets>
+    <worksheet name='List: Button Absent'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='employee_engagement_kpi_mock_data_adjusted' name='federated.0e2q5du0trvxpa1gd2mr60z5zyrg' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Employee List: Absent &gt;10' datatype='boolean' name='[Patient List: No Accountable Visit (copy)_1129559137082429454]' param-domain-type='list' role='measure' type='nominal' value='false'>
+              <calculation class='tableau' formula='false' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0e2q5du0trvxpa1gd2mr60z5zyrg'>
+            <column caption='Absenteeism Rate' datatype='real' name='[AbsenteeismRate]' role='measure' type='quantitative' />
+            <column caption='True' datatype='boolean' name='[Calculation_104849431753039872]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='TRUE' />
+            </column>
+            <column caption='False' datatype='boolean' name='[Calculation_104849431753080833]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='FALSE' />
+            </column>
+            <column caption='MIN(1)' datatype='integer' name='[Calculation_1129559137009483778]' role='measure' type='quantitative' user:unnamed='Sheet 83'>
+              <calculation class='tableau' formula='MIN(1)' />
+            </column>
+            <column caption='&apos;&apos;' datatype='string' name='[Calculation_1129559137009668100]' role='dimension' type='nominal' user:unnamed='Sheet 83'>
+              <calculation class='tableau' formula='&apos;&apos;' />
+            </column>
+            <column caption='Deselect' datatype='string' name='[Calculation_4638003988735442965]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='&apos;&apos;&#10;&#10;//used in highlight action to deselect the expand button&#10;//and the incomplete and complete buttons' />
+            </column>
+            <column caption='Employees Absent (copy)' datatype='boolean' name='[Employees Absent (copy)_4683743618240409603]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [Parameters].[Patient List: No Accountable Visit (copy)_1129559137082429454]&#10;WHEN TRUE THEN FALSE&#10;WHEN FALSE THEN TRUE&#10;END' />
+            </column>
+            <column caption='Employees Absent' datatype='boolean' name='[Patients no Accountable Visit (copy)_1129559137082482703]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [Parameters].[Patient List: No Accountable Visit (copy)_1129559137082429454]&#10;WHEN TRUE THEN&#10;    IF [AbsenteeismRate]&gt;10&#10;    THEN TRUE ELSE FALSE END&#10;WHEN FALSE THEN TRUE&#10;END' />
+            </column>
+            <column-instance column='[Calculation_104849431753039872]' derivation='None' name='[none:Calculation_104849431753039872:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_104849431753080833]' derivation='None' name='[none:Calculation_104849431753080833:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1129559137009668100]' derivation='None' name='[none:Calculation_1129559137009668100:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_4638003988735442965]' derivation='None' name='[none:Calculation_4638003988735442965:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Employees Absent (copy)_4683743618240409603]' derivation='None' name='[none:Employees Absent (copy)_4683743618240409603:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Patients no Accountable Visit (copy)_1129559137082482703]' derivation='None' name='[none:Patients no Accountable Visit (copy)_1129559137082482703:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1129559137009483778]' derivation='User' name='[usr:Calculation_1129559137009483778:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Action (True)]'>
+            <groupfilter function='level-members' level='[Calculation_104849431753039872]' user:ui-action-filter='[Action12_649340E881F14B8DB04DD85B3BF0B826]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Action (True)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' field-type='quantitative' max='1' min='0' range-type='fixed' scope='cols' type='space' />
+            <format attr='display' class='0' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' scope='cols' value='false' />
+            <format attr='height' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' value='31' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' value='44' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-disallow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[Parameters].[Patient List: No Accountable Visit (copy)_1129559137082429454]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients no Accountable Visit (copy)_1129559137082482703:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753039872:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753080833:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees Absent (copy)_4683743618240409603:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_4638003988735442965:nk]' />
+              <text column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137009668100:nk]' />
+            </encodings>
+            <customized-tooltip show-buttons='false'>
+              <formatted-text>
+                <run italic='true'>Employees with an absenteeism rate greater than 10</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run fontname='Tableau Regular' fontsize='10'>Employees with High Absenteeism</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='size' value='1.9890055656433105' />
+                <format attr='mark-color' value='#e8ecf3' />
+                <format attr='has-stroke' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]</cols>
+      </table>
+      <simple-id uuid='{4CA84AA3-0525-4DAE-8D31-287C01DBC720}' />
+    </worksheet>
+    <worksheet name='List: Button Performance'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='employee_engagement_kpi_mock_data_adjusted' name='federated.0e2q5du0trvxpa1gd2mr60z5zyrg' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Employee List: Performance &lt;3' datatype='boolean' name='[Parameter 17]' param-domain-type='list' role='measure' type='nominal' value='false'>
+              <calculation class='tableau' formula='false' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0e2q5du0trvxpa1gd2mr60z5zyrg'>
+            <column caption='True' datatype='boolean' name='[Calculation_104849431753039872]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='TRUE' />
+            </column>
+            <column caption='False' datatype='boolean' name='[Calculation_104849431753080833]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='FALSE' />
+            </column>
+            <column caption='MIN(1)' datatype='integer' name='[Calculation_1129559137009483778]' role='measure' type='quantitative' user:unnamed='Sheet 83'>
+              <calculation class='tableau' formula='MIN(1)' />
+            </column>
+            <column caption='&apos;&apos;' datatype='string' name='[Calculation_1129559137009668100]' role='dimension' type='nominal' user:unnamed='Sheet 83'>
+              <calculation class='tableau' formula='&apos;&apos;' />
+            </column>
+            <column caption='Employees Low Performance' datatype='boolean' name='[Calculation_421086621054783490]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 17]=FALSE OR&#10;&#10;([Parameters].[Parameter 17] AND [PerformanceRating]&lt;3)&#10;&#10;/*&#10;CASE [Employee List: Performance &lt;3]&#13;&#10;WHEN TRUE THEN&#13;&#10;    IF [Performance Rating]&lt;3&#13;&#10;    THEN TRUE ELSE FALSE END&#13;&#10;WHEN FALSE THEN TRUE&#13;&#10;END&#10;*/' />
+            </column>
+            <column caption='Deselect' datatype='string' name='[Calculation_4638003988735442965]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='&apos;&apos;&#10;&#10;//used in highlight action to deselect the expand button&#10;//and the incomplete and complete buttons' />
+            </column>
+            <column caption='Employees Low Performance (copy)' datatype='boolean' name='[Employees Low Performance (copy)_104849431757533186]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 17]&#13;&#10;WHEN TRUE THEN FALSE&#13;&#10;WHEN FALSE THEN TRUE&#13;&#10;END' />
+            </column>
+            <column caption='Performance Rating' datatype='integer' name='[PerformanceRating]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_104849431753039872]' derivation='None' name='[none:Calculation_104849431753039872:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_104849431753080833]' derivation='None' name='[none:Calculation_104849431753080833:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1129559137009668100]' derivation='None' name='[none:Calculation_1129559137009668100:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_421086621054783490]' derivation='None' name='[none:Calculation_421086621054783490:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_4638003988735442965]' derivation='None' name='[none:Calculation_4638003988735442965:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Employees Low Performance (copy)_104849431757533186]' derivation='None' name='[none:Employees Low Performance (copy)_104849431757533186:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1129559137009483778]' derivation='User' name='[usr:Calculation_1129559137009483778:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Action (True)]'>
+            <groupfilter function='level-members' level='[Calculation_104849431753039872]' user:ui-action-filter='[Action7_15C0006A8F8347EB839E5221866694CA]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Action (True)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' field-type='quantitative' max='1' min='0' range-type='fixed' scope='cols' type='space' />
+            <format attr='display' class='0' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' scope='cols' value='false' />
+            <format attr='height' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' value='31' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' value='44' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-disallow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[Parameters].[Parameter 17]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_421086621054783490:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753080833:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753039872:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees Low Performance (copy)_104849431757533186:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_4638003988735442965:nk]' />
+              <text column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137009668100:nk]' />
+            </encodings>
+            <customized-tooltip show-buttons='false'>
+              <formatted-text>
+                <run italic='true'>Employees with a performance review score less than 3</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run fontname='Tableau Regular' fontsize='10'>Low Performing Employees</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='size' value='1.9890055656433105' />
+                <format attr='mark-color' value='#e8ecf3' />
+                <format attr='has-stroke' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]</cols>
+      </table>
+      <simple-id uuid='{8A88BFC6-9BF3-4D13-B04F-31D975A66F6F}' />
+    </worksheet>
+    <worksheet name='List: Button Promoted'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='employee_engagement_kpi_mock_data_adjusted' name='federated.0e2q5du0trvxpa1gd2mr60z5zyrg' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Employee List: Lower Rank Promoted' datatype='boolean' name='[Patient List: Acute Visits (copy)_1129559137018077191]' param-domain-type='list' role='measure' type='nominal' value='false'>
+              <calculation class='tableau' formula='false' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0e2q5du0trvxpa1gd2mr60z5zyrg'>
+            <column caption='True' datatype='boolean' name='[Calculation_104849431753039872]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='TRUE' />
+            </column>
+            <column caption='False' datatype='boolean' name='[Calculation_104849431753080833]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='FALSE' />
+            </column>
+            <column caption='MIN(1)' datatype='integer' name='[Calculation_1129559137009483778]' role='measure' type='quantitative' user:unnamed='Sheet 83'>
+              <calculation class='tableau' formula='MIN(1)' />
+            </column>
+            <column caption='&apos;&apos;' datatype='string' name='[Calculation_1129559137009668100]' role='dimension' type='nominal' user:unnamed='Sheet 83'>
+              <calculation class='tableau' formula='&apos;&apos;' />
+            </column>
+            <column caption='Deselect' datatype='string' name='[Calculation_4638003988735442965]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='&apos;&apos;&#10;&#10;//used in highlight action to deselect the expand button&#10;//and the incomplete and complete buttons' />
+            </column>
+            <column caption='Employees Promoted Analyst (copy)' datatype='boolean' name='[Employees Promoted from Lower Rank (copy)_104849431758675971]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [Parameters].[Patient List: Acute Visits (copy)_1129559137018077191]&#13;&#10;WHEN TRUE THEN FALSE&#13;&#10;WHEN FALSE THEN TRUE&#13;&#10;END' />
+            </column>
+            <column caption='Employees Promoted Analysts' datatype='boolean' name='[Patients with Acute Visit no PCP (copy)_1129559137018146824]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [Parameters].[Patient List: Acute Visits (copy)_1129559137018077191]&#13;&#10;WHEN TRUE THEN&#13;&#10;    IF [PromotionInLastYear]=1&#13;&#10;    AND ([Position]=&apos;Senior Analyst&apos; OR [Position]=&apos;Analyst&apos;)&#13;&#10;    THEN TRUE ELSE FALSE END&#13;&#10;WHEN FALSE THEN TRUE&#13;&#10;END' />
+            </column>
+            <column datatype='string' name='[Position]' role='dimension' type='nominal' />
+            <column caption='Promotion In Last Year' datatype='integer' name='[PromotionInLastYear]' role='dimension' type='quantitative' />
+            <column-instance column='[Calculation_104849431753039872]' derivation='None' name='[none:Calculation_104849431753039872:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_104849431753080833]' derivation='None' name='[none:Calculation_104849431753080833:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1129559137009668100]' derivation='None' name='[none:Calculation_1129559137009668100:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_4638003988735442965]' derivation='None' name='[none:Calculation_4638003988735442965:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Employees Promoted from Lower Rank (copy)_104849431758675971]' derivation='None' name='[none:Employees Promoted from Lower Rank (copy)_104849431758675971:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Patients with Acute Visit no PCP (copy)_1129559137018146824]' derivation='None' name='[none:Patients with Acute Visit no PCP (copy)_1129559137018146824:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1129559137009483778]' derivation='User' name='[usr:Calculation_1129559137009483778:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Action (True)]'>
+            <groupfilter function='level-members' level='[Calculation_104849431753039872]' user:ui-action-filter='[Action11_F600750E275A415598B559AFF6721DA2]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Action (True)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' field-type='quantitative' max='1' min='0' range-type='fixed' scope='cols' type='space' />
+            <format attr='display' class='0' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' scope='cols' value='false' />
+            <format attr='height' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' value='31' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' value='44' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-disallow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[Parameters].[Patient List: Acute Visits (copy)_1129559137018077191]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with Acute Visit no PCP (copy)_1129559137018146824:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753039872:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753080833:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_4638003988735442965:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees Promoted from Lower Rank (copy)_104849431758675971:nk]' />
+              <text column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137009668100:nk]' />
+            </encodings>
+            <customized-tooltip show-buttons='false'>
+              <formatted-text>
+                <run italic='true'>Analysts or Senior Analysts promoted in the past year</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run fontname='Tableau Regular' fontsize='10'>Recently Promoted Analysts</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='size' value='1.9890055656433105' />
+                <format attr='mark-color' value='#e8ecf3' />
+                <format attr='has-stroke' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]</cols>
+      </table>
+      <simple-id uuid='{AF398045-E28F-460F-9986-AA7BAA5EBAE0}' />
+    </worksheet>
+    <worksheet name='List: Button Salary'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='employee_engagement_kpi_mock_data_adjusted' name='federated.0e2q5du0trvxpa1gd2mr60z5zyrg' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Employee List: High Salary' datatype='boolean' name='[Patient List: Open Interventions (copy)_421086621059874820]' param-domain-type='list' role='measure' type='nominal' value='false'>
+              <calculation class='tableau' formula='false' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0e2q5du0trvxpa1gd2mr60z5zyrg'>
+            <column caption='Annual Salary' datatype='real' default-format='c&quot;$&quot;#,##0;-&quot;$&quot;#,##0' name='[AnnualSalary]' role='measure' type='quantitative' />
+            <column caption='True' datatype='boolean' name='[Calculation_104849431753039872]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='TRUE' />
+            </column>
+            <column caption='False' datatype='boolean' name='[Calculation_104849431753080833]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='FALSE' />
+            </column>
+            <column caption='MIN(1)' datatype='integer' name='[Calculation_1129559137009483778]' role='measure' type='quantitative' user:unnamed='Sheet 83'>
+              <calculation class='tableau' formula='MIN(1)' />
+            </column>
+            <column caption='&apos;&apos;' datatype='string' name='[Calculation_1129559137009668100]' role='dimension' type='nominal' user:unnamed='Sheet 83'>
+              <calculation class='tableau' formula='&apos;&apos;' />
+            </column>
+            <column caption='Deselect' datatype='string' name='[Calculation_4638003988735442965]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='&apos;&apos;&#10;&#10;//used in highlight action to deselect the expand button&#10;//and the incomplete and complete buttons' />
+            </column>
+            <column caption='Employees with Salary &gt;$100K (copy)' datatype='boolean' name='[Employees with Salary &gt;$100K (copy)_4683743618240462852]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [Parameters].[Patient List: Open Interventions (copy)_421086621059874820]&#10;WHEN TRUE THEN FALSE&#10;WHEN FALSE THEN TRUE&#10;END' />
+            </column>
+            <column caption='Employees with Salary &gt;$100K' datatype='boolean' name='[Patients with Acute Visit no PCP (copy)_421086621059940357]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [Parameters].[Patient List: Open Interventions (copy)_421086621059874820]&#13;&#10;WHEN TRUE THEN&#13;&#10;    IF [AnnualSalary]&gt;100000&#13;&#10;    THEN TRUE ELSE FALSE END&#13;&#10;WHEN FALSE THEN TRUE&#13;&#10;END' />
+            </column>
+            <column-instance column='[Calculation_104849431753039872]' derivation='None' name='[none:Calculation_104849431753039872:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_104849431753080833]' derivation='None' name='[none:Calculation_104849431753080833:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1129559137009668100]' derivation='None' name='[none:Calculation_1129559137009668100:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_4638003988735442965]' derivation='None' name='[none:Calculation_4638003988735442965:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Employees with Salary &gt;$100K (copy)_4683743618240462852]' derivation='None' name='[none:Employees with Salary &gt;$100K (copy)_4683743618240462852:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Patients with Acute Visit no PCP (copy)_421086621059940357]' derivation='None' name='[none:Patients with Acute Visit no PCP (copy)_421086621059940357:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1129559137009483778]' derivation='User' name='[usr:Calculation_1129559137009483778:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Action (True)]'>
+            <groupfilter function='level-members' level='[Calculation_104849431753039872]' user:ui-action-filter='[Action10_B17B297205F443149762C84A59797467]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Action (True)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' field-type='quantitative' max='1' min='0' range-type='fixed' scope='cols' type='space' />
+            <format attr='display' class='0' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' scope='cols' value='false' />
+            <format attr='height' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' value='31' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' value='44' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-disallow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[Parameters].[Patient List: Open Interventions (copy)_421086621059874820]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with Acute Visit no PCP (copy)_421086621059940357:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753080833:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753039872:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees with Salary &gt;$100K (copy)_4683743618240462852:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_4638003988735442965:nk]' />
+              <text column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137009668100:nk]' />
+            </encodings>
+            <customized-tooltip show-buttons='false'>
+              <formatted-text>
+                <run italic='true'>Employees with a salary over $100,000</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run fontname='Tableau Regular' fontsize='10'>High-Salaried Employees</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='size' value='1.9890055656433105' />
+                <format attr='mark-color' value='#e8ecf3' />
+                <format attr='has-stroke' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]</cols>
+      </table>
+      <simple-id uuid='{4DFDD735-1136-4366-87FB-420D0E1D2067}' />
+    </worksheet>
+    <worksheet name='List: Button Tenure'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='employee_engagement_kpi_mock_data_adjusted' name='federated.0e2q5du0trvxpa1gd2mr60z5zyrg' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Employees List: Young with Tenure &gt;10' datatype='boolean' name='[Parameter 16]' param-domain-type='list' role='measure' type='nominal' value='false'>
+              <calculation class='tableau' formula='false' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0e2q5du0trvxpa1gd2mr60z5zyrg'>
+            <column datatype='integer' name='[Age]' role='measure' type='quantitative' />
+            <column caption='True' datatype='boolean' name='[Calculation_104849431753039872]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='TRUE' />
+            </column>
+            <column caption='False' datatype='boolean' name='[Calculation_104849431753080833]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='FALSE' />
+            </column>
+            <column caption='Employees Tenure&gt;5 and Age &lt;30' datatype='boolean' name='[Calculation_1129559137008394240]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 16]=FALSE OR&#10;&#10;([Parameters].[Parameter 16] AND [Tenure]&gt;5 AND [Age]&lt;30)&#10;&#10;/*&#10;CASE [Employees List: Young with Tenure &gt;10]&#10;WHEN TRUE THEN&#10;    IF [Tenure]&gt;5&#10;    AND [Age]&lt;30&#10;    THEN TRUE ELSE FALSE END&#10;WHEN FALSE THEN TRUE&#10;END&#10;*/' />
+            </column>
+            <column caption='MIN(1)' datatype='integer' name='[Calculation_1129559137009483778]' role='measure' type='quantitative' user:unnamed='Sheet 83'>
+              <calculation class='tableau' formula='MIN(1)' />
+            </column>
+            <column caption='&apos;&apos;' datatype='string' name='[Calculation_1129559137009668100]' role='dimension' type='nominal' user:unnamed='Sheet 83'>
+              <calculation class='tableau' formula='&apos;&apos;' />
+            </column>
+            <column caption='Deselect' datatype='string' name='[Calculation_4638003988735442965]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='&apos;&apos;&#10;&#10;//used in highlight action to deselect the expand button&#10;//and the incomplete and complete buttons' />
+            </column>
+            <column caption='Employees Tenure&gt;5 and Age &lt;30 (copy)' datatype='boolean' name='[Employees Tenure&gt;10 and Age &lt;35 (copy)_4683743618239602688]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 16]&#10;WHEN TRUE THEN FALSE&#10;WHEN FALSE THEN TRUE&#10;END' />
+            </column>
+            <column datatype='integer' name='[Tenure]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_104849431753039872]' derivation='None' name='[none:Calculation_104849431753039872:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_104849431753080833]' derivation='None' name='[none:Calculation_104849431753080833:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1129559137008394240]' derivation='None' name='[none:Calculation_1129559137008394240:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1129559137009668100]' derivation='None' name='[none:Calculation_1129559137009668100:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_4638003988735442965]' derivation='None' name='[none:Calculation_4638003988735442965:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Employees Tenure&gt;10 and Age &lt;35 (copy)_4683743618239602688]' derivation='None' name='[none:Employees Tenure&gt;10 and Age &lt;35 (copy)_4683743618239602688:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1129559137009483778]' derivation='User' name='[usr:Calculation_1129559137009483778:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Action (True)]'>
+            <groupfilter function='level-members' level='[Calculation_104849431753039872]' user:ui-action-filter='[Action9_7A44BC68F15B4737AFF418CC297A8054]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Action (True)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' field-type='quantitative' max='1' min='0' range-type='fixed' scope='cols' type='space' />
+            <format attr='display' class='0' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' scope='cols' value='false' />
+            <format attr='height' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' value='31' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' value='44' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-disallow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[Parameters].[Parameter 16]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137008394240:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753039872:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753080833:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees Tenure&gt;10 and Age &lt;35 (copy)_4683743618239602688:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_4638003988735442965:nk]' />
+              <text column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137009668100:nk]' />
+            </encodings>
+            <customized-tooltip show-buttons='false'>
+              <formatted-text>
+                <run italic='true'>Employees with the company over 5 years who are under 30</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run fontname='Tableau Regular' fontsize='10'>Early in Career with Tenure &gt;5</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='size' value='1.9890055656433105' />
+                <format attr='mark-color' value='#e8ecf3' />
+                <format attr='has-stroke' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]</cols>
+      </table>
+      <simple-id uuid='{738CE1F2-4CF8-42AF-ABFE-2E7C6F633D24}' />
+    </worksheet>
+    <worksheet name='List: Button Training'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='employee_engagement_kpi_mock_data_adjusted' name='federated.0e2q5du0trvxpa1gd2mr60z5zyrg' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Employee List: No Training' datatype='boolean' name='[Patient List: ED Visits (copy)_1129559137016860677]' param-domain-type='list' role='measure' type='nominal' value='false'>
+              <calculation class='tableau' formula='false' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0e2q5du0trvxpa1gd2mr60z5zyrg'>
+            <column caption='True' datatype='boolean' name='[Calculation_104849431753039872]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='TRUE' />
+            </column>
+            <column caption='False' datatype='boolean' name='[Calculation_104849431753080833]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='FALSE' />
+            </column>
+            <column caption='MIN(1)' datatype='integer' name='[Calculation_1129559137009483778]' role='measure' type='quantitative' user:unnamed='Sheet 83'>
+              <calculation class='tableau' formula='MIN(1)' />
+            </column>
+            <column caption='&apos;&apos;' datatype='string' name='[Calculation_1129559137009668100]' role='dimension' type='nominal' user:unnamed='Sheet 83'>
+              <calculation class='tableau' formula='&apos;&apos;' />
+            </column>
+            <column caption='Deselect' datatype='string' name='[Calculation_4638003988735442965]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='&apos;&apos;&#10;&#10;//used in highlight action to deselect the expand button&#10;//and the incomplete and complete buttons' />
+            </column>
+            <column caption='Employees No Training (copy)' datatype='boolean' name='[Employees No Training (copy)_4683743618240344066]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [Parameters].[Patient List: ED Visits (copy)_1129559137016860677]&#10;WHEN TRUE THEN FALSE&#10;WHEN FALSE THEN TRUE&#10;END' />
+            </column>
+            <column caption='Participation In Training Sessions' datatype='integer' name='[ParticipationInTrainingSessions]' role='measure' type='quantitative' />
+            <column caption='Employees No Training' datatype='boolean' name='[Patients with ED Visit no PCP (copy)_1129559137016930310]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Patient List: ED Visits (copy)_1129559137016860677]=FALSE OR&#10;&#10;([Parameters].[Patient List: ED Visits (copy)_1129559137016860677] AND [ParticipationInTrainingSessions]=0)&#10;&#10;/*&#10;CASE [Employee List: No Training]&#13;&#10;WHEN TRUE THEN&#13;&#10;    IF [Participation In Training Sessions]=0 &#13;&#10;    THEN TRUE ELSE FALSE END&#13;&#10;WHEN FALSE THEN TRUE&#13;&#10;END&#10;*/' />
+            </column>
+            <column-instance column='[Calculation_104849431753039872]' derivation='None' name='[none:Calculation_104849431753039872:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_104849431753080833]' derivation='None' name='[none:Calculation_104849431753080833:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1129559137009668100]' derivation='None' name='[none:Calculation_1129559137009668100:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_4638003988735442965]' derivation='None' name='[none:Calculation_4638003988735442965:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Employees No Training (copy)_4683743618240344066]' derivation='None' name='[none:Employees No Training (copy)_4683743618240344066:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Patients with ED Visit no PCP (copy)_1129559137016930310]' derivation='None' name='[none:Patients with ED Visit no PCP (copy)_1129559137016930310:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1129559137009483778]' derivation='User' name='[usr:Calculation_1129559137009483778:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Action (True)]'>
+            <groupfilter function='level-members' level='[Calculation_104849431753039872]' user:ui-action-filter='[Action11_D26A546656A844BD9356A53BF2CDDC09]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Action (True)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' field-type='quantitative' max='1' min='0' range-type='fixed' scope='cols' type='space' />
+            <format attr='display' class='0' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' scope='cols' value='false' />
+            <format attr='height' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]' value='31' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' value='44' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-disallow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[Parameters].[Patient List: ED Visits (copy)_1129559137016860677]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with ED Visit no PCP (copy)_1129559137016930310:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753039872:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753080833:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees No Training (copy)_4683743618240344066:nk]' />
+              <lod column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_4638003988735442965:nk]' />
+              <text column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137009668100:nk]' />
+            </encodings>
+            <customized-tooltip show-buttons='false'>
+              <formatted-text>
+                <run italic='true'>Employees who have not participated in required trainings</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run fontname='Tableau Regular' fontsize='10'>Employees without Training</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='size' value='1.9890055656433105' />
+                <format attr='mark-color' value='#e8ecf3' />
+                <format attr='has-stroke' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_1129559137009483778:qk]</cols>
+      </table>
+      <simple-id uuid='{68C6B6C0-D1FC-404B-A1E6-DF291DBD9786}' />
+    </worksheet>
+    <worksheet name='List: Details'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='employee_engagement_kpi_mock_data_adjusted' name='federated.0e2q5du0trvxpa1gd2mr60z5zyrg' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Employees List: Young with Tenure &gt;10' datatype='boolean' name='[Parameter 16]' param-domain-type='list' role='measure' type='nominal' value='false'>
+              <calculation class='tableau' formula='false' />
+            </column>
+            <column caption='Employee List: Performance &lt;3' datatype='boolean' name='[Parameter 17]' param-domain-type='list' role='measure' type='nominal' value='false'>
+              <calculation class='tableau' formula='false' />
+            </column>
+            <column caption='Employee List: Lower Rank Promoted' datatype='boolean' name='[Patient List: Acute Visits (copy)_1129559137018077191]' param-domain-type='list' role='measure' type='nominal' value='false'>
+              <calculation class='tableau' formula='false' />
+            </column>
+            <column caption='Employee List: No Training' datatype='boolean' name='[Patient List: ED Visits (copy)_1129559137016860677]' param-domain-type='list' role='measure' type='nominal' value='false'>
+              <calculation class='tableau' formula='false' />
+            </column>
+            <column caption='Employee List: Absent &gt;10' datatype='boolean' name='[Patient List: No Accountable Visit (copy)_1129559137082429454]' param-domain-type='list' role='measure' type='nominal' value='false'>
+              <calculation class='tableau' formula='false' />
+            </column>
+            <column caption='Employee List: High Salary' datatype='boolean' name='[Patient List: Open Interventions (copy)_421086621059874820]' param-domain-type='list' role='measure' type='nominal' value='false'>
+              <calculation class='tableau' formula='false' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0e2q5du0trvxpa1gd2mr60z5zyrg'>
+            <column caption='Absenteeism Rate' datatype='real' name='[AbsenteeismRate]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Age]' role='measure' type='quantitative' />
+            <column caption='Annual Salary' datatype='real' default-format='c&quot;$&quot;#,##0;-&quot;$&quot;#,##0' name='[AnnualSalary]' role='measure' type='quantitative' />
+            <column caption='Recently Promoted' datatype='string' name='[Calculation_108579012702625792]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IIF([PromotionInLastYear]=1,&apos;Yes&apos;, &apos;No&apos;)' />
+            </column>
+            <column caption='Employees Tenure&gt;5 and Age &lt;30' datatype='boolean' name='[Calculation_1129559137008394240]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 16]=FALSE OR&#10;&#10;([Parameters].[Parameter 16] AND [Tenure]&gt;5 AND [Age]&lt;30)&#10;&#10;/*&#10;CASE [Employees List: Young with Tenure &gt;10]&#10;WHEN TRUE THEN&#10;    IF [Tenure]&gt;5&#10;    AND [Age]&lt;30&#10;    THEN TRUE ELSE FALSE END&#10;WHEN FALSE THEN TRUE&#10;END&#10;*/' />
+            </column>
+            <column caption='Salary Bands' datatype='string' name='[Calculation_159033402293936128]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [AnnualSalary]&lt;50000 THEN &apos;&lt;$50,000&apos;&#10;ELSEIF [AnnualSalary]&lt;75000 THEN &apos;$50,000-$74,999&apos;&#10;ELSEIF [AnnualSalary]&lt;100000 THEN &apos;$75,000-$100,000&apos;&#10;ELSE &apos;$100,000+&apos; END' />
+            </column>
+            <column caption='Employees Low Performance' datatype='boolean' name='[Calculation_421086621054783490]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 17]=FALSE OR&#10;&#10;([Parameters].[Parameter 17] AND [PerformanceRating]&lt;3)&#10;&#10;/*&#10;CASE [Employee List: Performance &lt;3]&#13;&#10;WHEN TRUE THEN&#13;&#10;    IF [Performance Rating]&lt;3&#13;&#10;    THEN TRUE ELSE FALSE END&#13;&#10;WHEN FALSE THEN TRUE&#13;&#10;END&#10;*/' />
+            </column>
+            <column datatype='string' name='[Department]' role='dimension' type='nominal' />
+            <column caption='Employee ID' datatype='string' name='[EmployeeID]' role='dimension' type='nominal' />
+            <column caption='Engagement Score' datatype='real' name='[EngagementScore]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Gender]' role='dimension' type='nominal' />
+            <column caption='Job Satisfaction' datatype='integer' name='[JobSatisfaction]' role='measure' type='quantitative' />
+            <column caption='Participation In Training Sessions' datatype='integer' name='[ParticipationInTrainingSessions]' role='measure' type='quantitative' />
+            <column caption='Employees Absent' datatype='boolean' name='[Patients no Accountable Visit (copy)_1129559137082482703]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [Parameters].[Patient List: No Accountable Visit (copy)_1129559137082429454]&#10;WHEN TRUE THEN&#10;    IF [AbsenteeismRate]&gt;10&#10;    THEN TRUE ELSE FALSE END&#10;WHEN FALSE THEN TRUE&#10;END' />
+            </column>
+            <column caption='Employees Promoted Analysts' datatype='boolean' name='[Patients with Acute Visit no PCP (copy)_1129559137018146824]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [Parameters].[Patient List: Acute Visits (copy)_1129559137018077191]&#13;&#10;WHEN TRUE THEN&#13;&#10;    IF [PromotionInLastYear]=1&#13;&#10;    AND ([Position]=&apos;Senior Analyst&apos; OR [Position]=&apos;Analyst&apos;)&#13;&#10;    THEN TRUE ELSE FALSE END&#13;&#10;WHEN FALSE THEN TRUE&#13;&#10;END' />
+            </column>
+            <column caption='Employees with Salary &gt;$100K' datatype='boolean' name='[Patients with Acute Visit no PCP (copy)_421086621059940357]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [Parameters].[Patient List: Open Interventions (copy)_421086621059874820]&#13;&#10;WHEN TRUE THEN&#13;&#10;    IF [AnnualSalary]&gt;100000&#13;&#10;    THEN TRUE ELSE FALSE END&#13;&#10;WHEN FALSE THEN TRUE&#13;&#10;END' />
+            </column>
+            <column caption='Employees No Training' datatype='boolean' name='[Patients with ED Visit no PCP (copy)_1129559137016930310]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Patient List: ED Visits (copy)_1129559137016860677]=FALSE OR&#10;&#10;([Parameters].[Patient List: ED Visits (copy)_1129559137016860677] AND [ParticipationInTrainingSessions]=0)&#10;&#10;/*&#10;CASE [Employee List: No Training]&#13;&#10;WHEN TRUE THEN&#13;&#10;    IF [Participation In Training Sessions]=0 &#13;&#10;    THEN TRUE ELSE FALSE END&#13;&#10;WHEN FALSE THEN TRUE&#13;&#10;END&#10;*/' />
+            </column>
+            <column caption='Performance Rating' datatype='integer' name='[PerformanceRating]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Position]' role='dimension' type='nominal' />
+            <column caption='Promotion In Last Year' datatype='integer' name='[PromotionInLastYear]' role='dimension' type='quantitative' />
+            <column datatype='integer' name='[Tenure]' role='measure' type='quantitative' />
+            <column-instance column='[Age]' derivation='None' name='[none:Age:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_108579012702625792]' derivation='None' name='[none:Calculation_108579012702625792:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1129559137008394240]' derivation='None' name='[none:Calculation_1129559137008394240:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_159033402293936128]' derivation='None' name='[none:Calculation_159033402293936128:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_421086621054783490]' derivation='None' name='[none:Calculation_421086621054783490:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Department]' derivation='None' name='[none:Department:nk]' pivot='key' type='nominal' />
+            <column-instance column='[EmployeeID]' derivation='None' name='[none:EmployeeID:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Gender]' derivation='None' name='[none:Gender:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Patients no Accountable Visit (copy)_1129559137082482703]' derivation='None' name='[none:Patients no Accountable Visit (copy)_1129559137082482703:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Patients with Acute Visit no PCP (copy)_1129559137018146824]' derivation='None' name='[none:Patients with Acute Visit no PCP (copy)_1129559137018146824:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Patients with Acute Visit no PCP (copy)_421086621059940357]' derivation='None' name='[none:Patients with Acute Visit no PCP (copy)_421086621059940357:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Patients with ED Visit no PCP (copy)_1129559137016930310]' derivation='None' name='[none:Patients with ED Visit no PCP (copy)_1129559137016930310:nk]' pivot='key' type='nominal' />
+            <column-instance column='[PerformanceRating]' derivation='None' name='[none:PerformanceRating:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Position]' derivation='None' name='[none:Position:nk]' pivot='key' type='nominal' />
+            <column-instance column='[AbsenteeismRate]' derivation='Sum' name='[sum:AbsenteeismRate:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[AnnualSalary]' derivation='Sum' name='[sum:AnnualSalary:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[EngagementScore]' derivation='Sum' name='[sum:EngagementScore:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[JobSatisfaction]' derivation='Sum' name='[sum:JobSatisfaction:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ParticipationInTrainingSessions]' derivation='Sum' name='[sum:ParticipationInTrainingSessions:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[PerformanceRating]' derivation='Sum' name='[sum:PerformanceRating:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Tenure]' derivation='Sum' name='[sum:Tenure:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:AnnualSalary:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:Tenure:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:PerformanceRating:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:AbsenteeismRate:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:EngagementScore:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:JobSatisfaction:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:ParticipationInTrainingSessions:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:AnnualSalary:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:Tenure:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:PerformanceRating:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:AbsenteeismRate:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:EngagementScore:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:JobSatisfaction:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:ParticipationInTrainingSessions:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137008394240:nk]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Calculation_1129559137008394240:nk]' member='%null%' />
+              <groupfilter function='member' level='[none:Calculation_1129559137008394240:nk]' member='true' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_159033402293936128:nk]'>
+            <groupfilter function='level-members' level='[none:Calculation_159033402293936128:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_421086621054783490:nk]'>
+            <groupfilter function='member' level='[none:Calculation_421086621054783490:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Department:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Department:nk]' />
+              <groupfilter function='member' level='[none:Department:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Gender:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Gender:nk]' />
+              <groupfilter function='member' level='[none:Gender:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients no Accountable Visit (copy)_1129559137082482703:nk]'>
+            <groupfilter function='member' level='[none:Patients no Accountable Visit (copy)_1129559137082482703:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with Acute Visit no PCP (copy)_1129559137018146824:nk]'>
+            <groupfilter function='member' level='[none:Patients with Acute Visit no PCP (copy)_1129559137018146824:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with Acute Visit no PCP (copy)_421086621059940357:nk]'>
+            <groupfilter function='member' level='[none:Patients with Acute Visit no PCP (copy)_421086621059940357:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with ED Visit no PCP (copy)_1129559137016930310:nk]'>
+            <groupfilter function='member' level='[none:Patients with ED Visit no PCP (copy)_1129559137016930310:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:PerformanceRating:ok]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:PerformanceRating:ok]' />
+              <groupfilter function='member' level='[none:PerformanceRating:ok]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Position:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Position:nk]' />
+              <groupfilter function='member' level='[none:Position:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137008394240:nk]</column>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with ED Visit no PCP (copy)_1129559137016930310:nk]</column>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients no Accountable Visit (copy)_1129559137082482703:nk]</column>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with Acute Visit no PCP (copy)_1129559137018146824:nk]</column>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with Acute Visit no PCP (copy)_421086621059940357:nk]</column>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_421086621054783490:nk]</column>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_159033402293936128:nk]</column>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:PerformanceRating:ok]</column>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Gender:nk]</column>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Department:nk]</column>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Position:nk]</column>
+            <column>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:ed_visit_count:qk]' value='n#,##0;-#,##0' />
+            <format attr='text-format' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:acute_visit_count:qk]' value='n#,##0;-#,##0' />
+            <format attr='text-format' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:AbsenteeismRate:qk]' value='n#,##0.0;-#,##0.0' />
+            <format attr='text-format' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:EngagementScore:qk]' value='n#,##0.00;-#,##0.00' />
+            <format attr='height' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Age:ok]' value='24' />
+            <format attr='height' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_108579012702625792:nk]' value='25' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='background-color' value='#00000000' />
+            <format attr='height' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[:Measure Names]' value='60' />
+            <format attr='width' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Position:nk]' value='104' />
+            <format attr='width' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:EmployeeID:nk]' value='76' />
+            <format attr='width' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Department:nk]' value='88' />
+            <format attr='width' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Age:ok]' value='48' />
+            <format attr='width' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Gender:nk]' value='60' />
+            <format attr='width' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_108579012702625792:nk]' value='64' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='vertical-align' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[:Measure Names]' value='bottom' />
+            <format attr='text-align' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[:Measure Names]' value='right' />
+            <format attr='font-size' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[:Measure Names]' value='8' />
+            <format attr='wrap' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[:Measure Names]' value='auto' />
+            <format attr='text-align' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Age:ok]' value='center' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='band-size' scope='rows' value='1' />
+            <format attr='band-level' scope='rows' value='9' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='color' value='#333333' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:ed_visit_count:qk]' value='ED Visit Count' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:EmployeeID:nk] / ([federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Gender:nk] / ([federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Age:ok] / ([federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Position:nk] / ([federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Department:nk] / [federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_108579012702625792:nk])))))</rows>
+        <cols>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[:Measure Names]</cols>
+        <tooltip-style tooltip-mode='none' />
+      </table>
+      <simple-id uuid='{D03C82E0-8FE4-45EF-81DE-3B1361F9153F}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Multi-Filtering Buttons for Tables'>
+      <repository-location derived-from='https://vizhub/workbooks/Multi-FilteringCustomButtonsforTables/Multi-FilteringButtonsforTables?rev=' id='107673851' path='/workbooks/Multi-FilteringCustomButtonsforTables' revision='' />
+      <style>
+        <style-rule element='dash-text'>
+          <format attr='text-orientation' id='dash-text_22' value='-90' />
+          <format attr='text-align' id='dash-text_22' value='center' />
+          <format attr='text-orientation' id='dash-text_23' value='-90' />
+          <format attr='text-align' id='dash-text_23' value='center' />
+          <format attr='text-orientation' id='dash-text_24' value='-90' />
+          <format attr='text-align' id='dash-text_24' value='center' />
+          <format attr='vertical-align' id='dash-text_16' value='bottom' />
+          <format attr='vertical-align' id='dash-text_17' value='bottom' />
+          <format attr='vertical-align' id='dash-text_18' value='bottom' />
+          <format attr='vertical-align' id='dash-text_19' value='bottom' />
+          <format attr='vertical-align' id='dash-text_20' value='bottom' />
+          <format attr='vertical-align' id='dash-text_21' value='bottom' />
+          <format attr='vertical-align' id='dash-text_22' value='bottom' />
+          <format attr='vertical-align' id='dash-text_23' value='bottom' />
+          <format attr='vertical-align' id='dash-text_24' value='bottom' />
+          <format attr='vertical-align' id='dash-text_26' value='top' />
+          <format attr='vertical-align' id='dash-text_46' value='top' />
+          <format attr='vertical-align' id='dash-text_45' value='top' />
+          <format attr='vertical-align' id='dash-text_14' value='bottom' />
+        </style-rule>
+      </style>
+      <size maxheight='800' maxwidth='1100' minheight='800' minwidth='1100' sizing-mode='fixed' />
+      <datasources>
+        <datasource caption='employee_engagement_kpi_mock_data_adjusted' name='federated.0e2q5du0trvxpa1gd2mr60z5zyrg' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0e2q5du0trvxpa1gd2mr60z5zyrg'>
+        <column caption='Recently Promoted' datatype='string' name='[Calculation_108579012702625792]' role='dimension' type='nominal'>
+          <calculation class='tableau' formula='IIF([PromotionInLastYear]=1,&apos;Yes&apos;, &apos;No&apos;)' />
+        </column>
+        <column caption='Salary Bands' datatype='string' name='[Calculation_159033402293936128]' role='dimension' type='nominal'>
+          <calculation class='tableau' formula='IF [AnnualSalary]&lt;50000 THEN &apos;&lt;$50,000&apos;&#10;ELSEIF [AnnualSalary]&lt;75000 THEN &apos;$50,000-$74,999&apos;&#10;ELSEIF [AnnualSalary]&lt;100000 THEN &apos;$75,000-$100,000&apos;&#10;ELSE &apos;$100,000+&apos; END' />
+        </column>
+        <column datatype='string' name='[Department]' role='dimension' type='nominal' />
+        <column datatype='string' name='[Gender]' role='dimension' type='nominal' />
+        <column caption='Performance Rating' datatype='integer' name='[PerformanceRating]' role='measure' type='quantitative' />
+        <column datatype='string' name='[Position]' role='dimension' type='nominal' />
+        <column-instance column='[Calculation_108579012702625792]' derivation='None' name='[none:Calculation_108579012702625792:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Calculation_159033402293936128]' derivation='None' name='[none:Calculation_159033402293936128:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Department]' derivation='None' name='[none:Department:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Gender]' derivation='None' name='[none:Gender:nk]' pivot='key' type='nominal' />
+        <column-instance column='[PerformanceRating]' derivation='None' name='[none:PerformanceRating:ok]' pivot='key' type='ordinal' />
+        <column-instance column='[Position]' derivation='None' name='[none:Position:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='100000' id='622' param='vert' type-v2='layout-flow' w='100000' x='0' y='0'>
+            <zone fixed-size='65' friendly-name='TItle' h='8125' id='616' is-fixed='true' param='horz' type-v2='layout-flow' w='99272' x='364' y='500'>
+              <zone forceUpdate='true' h='8125' id='615' type-v2='text' w='99272' x='364' y='500'>
+                <formatted-text>
+                  <run fontcolor='#00c4b3' fontname='Tableau Medium' fontsize='18'>Multi-Filtering Custom Buttons for Tables</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                  <format attr='margin-left' value='10' />
+                  <format attr='padding-right' value='8' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='1' h='125' id='617' is-fixed='true' type-v2='empty' w='99272' x='364' y='8625'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='0' />
+                <format attr='background-color' value='#00c4b3' />
+              </zone-style>
+            </zone>
+            <zone fixed-size='726' h='90750' id='621' is-fixed='true' param='horz' type-v2='layout-flow' w='99272' x='364' y='8750'>
+              <zone fixed-size='1022' friendly-name='Charts' h='90750' id='619' is-fixed='true' param='vert' type-v2='layout-flow' w='99272' x='364' y='8750'>
+                <zone friendly-name='Dashboard Items' h='87625' id='277' param='vert' type-v2='layout-flow' w='99272' x='364' y='8750'>
+                  <zone forceUpdate='true' h='7250' id='613' type-v2='text' w='98182' x='909' y='9500'>
+                    <formatted-text>
+                      <run fontcolor='#333333' fontname='Tableau Semibold' fontsize='18'>ABC ANALYTICS  |  Employee List</run>
+                      <run>Æ&#10;</run>
+                      <run fontcolor='#333333' italic='true'>Select from prefiltered buttons or use custom filters</run>
+                    </formatted-text>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='174' h='21750' id='553' is-fixed='true' param='horz' type-v2='layout-flow' w='98182' x='909' y='16750'>
+                    <zone fixed-size='280' h='21250' id='557' is-fixed='true' param='vert' type-v2='layout-flow' w='25455' x='909' y='16750'>
+                      <zone fixed-size='32' forceUpdate='true' h='4500' id='559' is-fixed='true' type-v2='text' w='25455' x='909' y='16750'>
+                        <formatted-text>
+                          <run fontalignment='1' fontcolor='#0d1c2e' fontname='Tableau Semibold' fontsize='10'>Successful Employees</run>
+                        </formatted-text>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                          <format attr='margin-bottom' value='0' />
+                          <format attr='background-color' value='#e0dcd6' />
+                        </zone-style>
+                      </zone>
+                      <zone fixed-size='2' h='750' id='634' is-fixed='true' type-v2='empty' w='25455' x='909' y='21250'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                          <format attr='margin-top' value='0' />
+                          <format attr='background-color' value='#187b81' />
+                        </zone-style>
+                      </zone>
+                      <zone h='16000' id='583' param='horz' type-v2='layout-flow' w='25455' x='909' y='22000'>
+                        <zone h='16000' id='585' layout-strategy-id='distribute-evenly' param='vert' type-v2='layout-flow' w='25455' x='909' y='22000'>
+                          <zone h='5375' id='578' name='List: Button Promoted' show-title='false' w='25455' x='909' y='22000'>
+                            <layout-cache cell-count-h='1' minwidth='100' type-h='cell' type-w='scalable' />
+                            <zone-style>
+                              <format attr='border-color' value='#000000' />
+                              <format attr='border-style' value='none' />
+                              <format attr='border-width' value='0' />
+                              <format attr='margin' value='4' />
+                              <format attr='margin-top' value='2' />
+                              <format attr='margin-bottom' value='4' />
+                            </zone-style>
+                          </zone>
+                          <zone h='5375' id='588' name='List: Button Salary' show-title='false' w='25455' x='909' y='27375'>
+                            <layout-cache cell-count-h='1' minwidth='100' type-h='cell' type-w='scalable' />
+                            <zone-style>
+                              <format attr='border-color' value='#000000' />
+                              <format attr='border-style' value='none' />
+                              <format attr='border-width' value='0' />
+                              <format attr='margin' value='4' />
+                              <format attr='margin-top' value='2' />
+                              <format attr='margin-bottom' value='4' />
+                            </zone-style>
+                          </zone>
+                          <zone h='5250' id='573' name='List: Button Tenure' show-title='false' w='25455' x='909' y='32750'>
+                            <layout-cache cell-count-h='1' minwidth='100' type-h='cell' type-w='scalable' />
+                            <zone-style>
+                              <format attr='border-color' value='#000000' />
+                              <format attr='border-style' value='none' />
+                              <format attr='border-width' value='0' />
+                              <format attr='margin' value='4' />
+                              <format attr='margin-top' value='2' />
+                              <format attr='margin-bottom' value='4' />
+                            </zone-style>
+                          </zone>
+                        </zone>
+                      </zone>
+                    </zone>
+                    <zone fixed-size='280' h='21250' id='555' is-fixed='true' param='vert' type-v2='layout-flow' w='25455' x='26364' y='16750'>
+                      <zone fixed-size='32' forceUpdate='true' h='4500' id='556' is-fixed='true' type-v2='text' w='25455' x='26364' y='16750'>
+                        <formatted-text>
+                          <run fontalignment='1' fontcolor='#0d1c2e' fontname='Tableau Semibold' fontsize='10'>Manager Follow-Up Needed</run>
+                        </formatted-text>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                          <format attr='margin-bottom' value='0' />
+                          <format attr='background-color' value='#e0dcd6' />
+                        </zone-style>
+                      </zone>
+                      <zone fixed-size='2' h='750' id='633' is-fixed='true' type-v2='empty' w='25455' x='26364' y='21250'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='0' />
+                          <format attr='margin-right' value='4' />
+                          <format attr='margin-bottom' value='4' />
+                          <format attr='margin-left' value='4' />
+                          <format attr='background-color' value='#187b81' />
+                        </zone-style>
+                      </zone>
+                      <zone h='16000' id='576' layout-strategy-id='distribute-evenly' param='vert' type-v2='layout-flow' w='25455' x='26364' y='22000'>
+                        <zone h='5375' id='587' name='List: Button Performance' show-title='false' w='25454' x='26364' y='22000'>
+                          <layout-cache cell-count-h='1' minwidth='100' type-h='cell' type-w='scalable' />
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                            <format attr='margin-top' value='2' />
+                            <format attr='margin-bottom' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone h='5375' id='581' name='List: Button Absent' show-title='false' w='25454' x='26364' y='27375'>
+                          <layout-cache cell-count-h='1' minwidth='100' type-h='cell' type-w='scalable' />
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                            <format attr='margin-top' value='2' />
+                            <format attr='margin-bottom' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone h='5250' id='577' name='List: Button Training' show-title='false' w='25454' x='26364' y='32750'>
+                          <layout-cache cell-count-h='1' minwidth='100' type-h='cell' type-w='scalable' />
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                            <format attr='margin-top' value='2' />
+                            <format attr='margin-bottom' value='4' />
+                          </zone-style>
+                        </zone>
+                      </zone>
+                    </zone>
+                    <zone h='21250' id='560' param='vert' type-v2='layout-flow' w='47272' x='51819' y='16750'>
+                      <zone fixed-size='32' forceUpdate='true' h='4500' id='561' is-fixed='true' type-v2='text' w='47272' x='51819' y='16750'>
+                        <formatted-text>
+                          <run fontalignment='1' fontcolor='#0d1c2e' fontname='Tableau Semibold' fontsize='10'>Additional Custom Filters</run>
+                        </formatted-text>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                          <format attr='margin-bottom' value='0' />
+                          <format attr='background-color' value='#e0dcd6' />
+                        </zone-style>
+                      </zone>
+                      <zone fixed-size='2' h='750' id='635' is-fixed='true' type-v2='empty' w='47272' x='51819' y='21250'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                          <format attr='margin-top' value='0' />
+                          <format attr='background-color' value='#187b81' />
+                        </zone-style>
+                      </zone>
+                      <zone h='6125' id='312' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='47272' x='51819' y='22000'>
+                        <zone h='6125' id='572' mode='checkdropdown' name='List: Details' param='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Department:nk]' show-exclude='false' show-mode='false' type-v2='filter' values='database' w='15818' x='51818' y='22000'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone h='6125' id='609' mode='checkdropdown' name='List: Details' param='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Position:nk]' type-v2='filter' values='database' w='15728' x='67636' y='22000'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone h='6125' id='608' mode='checkdropdown' name='List: Details' param='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Gender:nk]' type-v2='filter' values='database' w='15727' x='83364' y='22000'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='0' />
+                        </zone-style>
+                      </zone>
+                      <zone h='6125' id='570' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='47272' x='51819' y='28125'>
+                        <zone h='6125' id='610' mode='dropdown' name='List: Details' param='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_108579012702625792:nk]' type-v2='filter' values='database' w='15818' x='51818' y='28125'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone h='6125' id='611' mode='checkdropdown' name='List: Details' param='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:PerformanceRating:ok]' type-v2='filter' values='database' w='15728' x='67636' y='28125'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone h='6125' id='612' mode='checkdropdown' name='List: Details' param='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_159033402293936128:nk]' type-v2='filter' values='database' w='15727' x='83364' y='28125'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                      </zone>
+                      <zone h='3750' id='594' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='47272' x='51819' y='34250'>
+                        <zone fixed-size='24' h='3750' id='566' is-fixed='true' name='List: Details' param='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:acute_visit_count:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='15818' x='51818' y='34250'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                            <format attr='margin-top' value='2' />
+                          </zone-style>
+                        </zone>
+                        <zone h='3750' id='567' name='List: Details' param='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:ed_visit_count:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='15728' x='67636' y='34250'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                            <format attr='margin-top' value='2' />
+                          </zone-style>
+                        </zone>
+                        <zone h='3750' id='600' name='List: Details' param='[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Calculation_598697319666495494:qk]' type-v2='filter' values='database' w='15727' x='83364' y='34250'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                            <format attr='margin-top' value='2' />
+                          </zone-style>
+                        </zone>
+                      </zone>
+                    </zone>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='padding-bottom' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='57125' id='304' param='vert' type-v2='layout-flow' w='98182' x='909' y='38500'>
+                    <zone fixed-size='35' forceUpdate='true' h='5000' id='305' is-fixed='true' type-v2='text' w='98000' x='1000' y='38625'>
+                      <formatted-text>
+                        <run fontalignment='1' fontcolor='#ffffff' fontname='Tableau Semibold' fontsize='12'>Selected Employee List</run>
+                      </formatted-text>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='0' />
+                        <format attr='margin-bottom' value='5' />
+                        <format attr='padding' value='5' />
+                        <format attr='background-color' value='#187b81' />
+                      </zone-style>
+                    </zone>
+                    <zone fixed-size='427' h='51875' id='565' is-fixed='true' name='List: Details' show-title='false' w='98000' x='1000' y='43625'>
+                      <layout-cache cell-count-w='7' non-cell-size-w='440' type-h='fixed' type-w='cell' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone-style>
+                      <format attr='border-color' value='#e9e9ed' />
+                      <format attr='border-style' value='solid' />
+                      <format attr='border-width' value='1' />
+                      <format attr='margin' value='0' />
+                      <format attr='background-color' value='#ffffff' />
+                    </zone-style>
+                  </zone>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='6' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='3125' id='618' type-v2='text' w='99272' x='364' y='96375'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#5b676f'>Created by Lindsay Betzendahl, Director of Analytics and Data Visualization, for HealthDataViz, a Sellers Dorsey solution</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='0' />
+                </zone-style>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='padding' value='0' />
+              </zone-style>
+            </zone>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='0' />
+          </zone-style>
+        </zone>
+        <zone forceUpdate='' h='89875' hidden-by-user='true' id='636' param='https://vizzendata.com/2024/10/28/multi-filtering-buttons-for-tables-and-lists/' type-v2='web' w='98455' x='455' y='9375' />
+        <zone h='5125' id='637' type-v2='dashboard-object' w='15455' x='83636' y='2000'>
+          <button action='' active-visual-state-index='1'>
+            <toggle-action>tabdoc:toggle-button-click-action window-id=&quot;{E0666969-0930-4C1F-84B4-A3C5186F7789}&quot; zone-id=&quot;637&quot; zone-ids=[636]</toggle-action>
+            <button-visual-state>
+              <image-path>Image/Blog Button2.png</image-path>
+              <tooltip-text>Close window</tooltip-text>
+            </button-visual-state>
+            <button-visual-state>
+              <image-path>Image/Blog Button.png</image-path>
+              <tooltip-text>Click for blog</tooltip-text>
+            </button-visual-state>
+          </button>
+        </zone>
+      </zones>
+      <simple-id uuid='{1F0AF8C1-C345-4974-B65C-69B351AE0A96}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='51'>
+    <window class='dashboard' maximized='true' name='Multi-Filtering Buttons for Tables'>
+      <viewpoints>
+        <viewpoint name='List: Button Absent'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='List: Button Performance'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='List: Button Promoted'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='List: Button Salary'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='List: Button Tenure'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='List: Button Training'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='List: Details'>
+          <zoom type='fit-width' />
+        </viewpoint>
+      </viewpoints>
+      <active id='615' />
+      <simple-id uuid='{E0666969-0930-4C1F-84B4-A3C5186F7789}' />
+    </window>
+    <window class='worksheet' hidden='true' name='List: Button Absent'>
+      <cards>
+        <edge name='left'>
+          <strip size='222'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[Parameters].[Patient List: No Accountable Visit (copy)_1129559137082429454]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[Parameters].[Patient List: ED Visits (copy)_1129559137016860677]</field>
+            <field>[Parameters].[Patient List: No Accountable Visit (copy)_1129559137082429454]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753039872:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753080833:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137008394240:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137009668100:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_4638003988735442965:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees Absent (copy)_4683743618240409603:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with ED Visit no PCP (copy)_1129559137016930310:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Patients no Accountable Visit (copy)_1129559137082482703:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{3258FF0F-EF24-48D5-A6D6-E0C2A00EEC05}' />
+    </window>
+    <window class='worksheet' hidden='true' name='List: Button Performance'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[Parameters].[Parameter 17]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[Parameters].[Parameter 17]</field>
+            <field>[Parameters].[Patient List: ED Visits (copy)_1129559137016860677]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753039872:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753080833:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137008394240:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137009668100:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_4638003988735442965:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees Low Performance (copy)_104849431757533186:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with ED Visit no PCP (copy)_1129559137016930310:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{C7FF73C8-049E-4DEE-A3CC-98A49B69888A}' />
+    </window>
+    <window class='worksheet' hidden='true' name='List: Button Promoted'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[Parameters].[Patient List: Acute Visits (copy)_1129559137018077191]' type='color' />
+            <card mode='compact' param='[Parameters].[Patient List: Acute Visits (copy)_1129559137018077191]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[Parameters].[Patient List: Acute Visits (copy)_1129559137018077191]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753039872:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753080833:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137008394240:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137009668100:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_421086621054783490:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_4638003988735442965:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees Low Performance (copy)_104849431757533186:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees Promoted from Lower Rank (copy)_104849431758675971:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with Acute Visit no PCP (copy)_1129559137018146824:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with ED Visit no PCP (copy)_1129559137016930310:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{30779E6A-B16F-4F21-9599-5487FCB4A1A0}' />
+    </window>
+    <window class='worksheet' hidden='true' name='List: Button Salary'>
+      <cards>
+        <edge name='left'>
+          <strip size='284'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[Parameters].[Patient List: Open Interventions (copy)_421086621059874820]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[Parameters].[Patient List: ED Visits (copy)_1129559137016860677]</field>
+            <field>[Parameters].[Patient List: Open Interventions (copy)_421086621059874820]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753039872:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753080833:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137008394240:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137009668100:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_4638003988735442965:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees with Salary &gt;$100K (copy)_4683743618240462852:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with Acute Visit no PCP (copy)_421086621059940357:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with ED Visit no PCP (copy)_1129559137016930310:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{40355B00-A4FB-4D99-8500-2064D1A14443}' />
+    </window>
+    <window class='worksheet' hidden='true' name='List: Button Tenure'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[Parameters].[Parameter 16]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 16]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[Parameters].[Parameter 16]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753039872:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753080833:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137008394240:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137009668100:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_4638003988735442965:nk]</field>
+            <field><![CDATA[[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees Tenure>10 and Age <35 (copy)_4683743618239602688:nk]]]></field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{F021BA11-2341-4135-A2F5-809B616AC6DE}' />
+    </window>
+    <window class='worksheet' hidden='true' name='List: Button Training'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[Parameters].[Patient List: ED Visits (copy)_1129559137016860677]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[Parameters].[Patient List: ED Visits (copy)_1129559137016860677]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753039872:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_104849431753080833:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137008394240:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137009668100:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_4638003988735442965:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Employees No Training (copy)_4683743618240344066:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with ED Visit no PCP (copy)_1129559137016930310:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{F2F804DE-152A-4FE8-A83D-C2D87FCD12C0}' />
+    </window>
+    <window class='worksheet' hidden='true' name='List: Details'>
+      <cards>
+        <edge name='left'>
+          <strip size='248'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='174'>
+            <card mode='compact' param='[Parameters].[Parameter 16]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Parameter 17]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Patient List: Acute Visits (copy)_1129559137018077191]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Patient List: ED Visits (copy)_1129559137016860677]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Patient List: No Accountable Visit (copy)_1129559137082429454]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Patient List: Open Interventions (copy)_421086621059874820]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[:Measure Names]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Age:ok]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_108579012702625792:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137008394240:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_1129559137042071564:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_159033402293936128:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_421086621054783490:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_790592883368067073:qk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_9052587134014636038:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_9052587134014869513:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_9052587134014922762:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Calculation_9052587134015430668:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Department:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:EmployeeID:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Gender:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with Acute Visit no PCP (copy)_1129559137018146824:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with Acute Visit no PCP (copy)_421086621059940357:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Patients with ED Visit no PCP (copy)_1129559137016930310:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:PerformanceRating:qk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:Position:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:aggregation_level:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:level_name_physician:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[none:lob:nk]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[sum:Tenure:ok]</field>
+            <field>[federated.0e2q5du0trvxpa1gd2mr60z5zyrg].[usr:Patients no Accountable Visit (copy)_1129559137082482703:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{9F01E908-3477-4C13-8F54-C3472FC5ADE6}' />
+    </window>
+  </windows>
+</workbook>
