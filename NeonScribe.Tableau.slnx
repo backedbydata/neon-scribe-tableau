@@ -1,8 +1,0 @@
-<Solution>
-  <Folder Name="/src/">
-    <Project Path="src/NeonScribe.Tableau.CLI/NeonScribe.Tableau.CLI.csproj" />
-    <Project Path="src/NeonScribe.Tableau.Core/NeonScribe.Tableau.Core.csproj" />
-    <Project Path="src/NeonScribe.Tableau.Documentation/NeonScribe.Tableau.Documentation.csproj" />
-    <Project Path="src/NeonScribe.Tableau.WPF/NeonScribe.Tableau.WPF.csproj" />
-  </Folder>
-</Solution>
