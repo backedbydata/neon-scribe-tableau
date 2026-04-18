@@ -1,0 +1,189 @@
+<Window x:Class="NeonScribe.Tableau.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:NeonScribe.Tableau.WPF"
+        xmlns:converters="clr-namespace:NeonScribe.Tableau.WPF.Converters"
+        xmlns:vm="clr-namespace:NeonScribe.Tableau.WPF.ViewModels"
+        mc:Ignorable="d"
+        Title="Neon Scribe for Tableau"
+        Height="280"
+        Width="500"
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Display"
+        TextOptions.TextRenderingMode="ClearType"
+        UseLayoutRounding="True"
+        SnapsToDevicePixels="True"
+        AllowDrop="True"
+        Drop="Window_Drop"
+        DragOver="Window_DragOver">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibility"/>
+        <converters:StringToVisibilityConverter x:Key="StringToVisibility"/>
+        <local:InvertedBooleanToVisibilityConverter x:Key="InvertedBoolToVisibility"/>
+        <converters:EnumToVisibilityConverter x:Key="EnumToVisibility"/>
+    </Window.Resources>
+
+    <Grid Margin="20,16,20,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="8"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="12"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Drop Zone -->
+        <Border
+            Grid.Row="0"
+            x:Name="DropZone"
+            BorderBrush="{DynamicResource MaterialDesignDivider}"
+            BorderThickness="2"
+            CornerRadius="6"
+            Background="{DynamicResource MaterialDesignCardBackground}"
+            Padding="16,14"
+            AllowDrop="True"
+            Drop="DropZone_Drop"
+            DragOver="DropZone_DragOver"
+            DragLeave="DropZone_DragLeave">
+
+            <Grid>
+                <!-- Empty state -->
+                <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Visibility="{Binding SelectedFilePath, Converter={StaticResource StringToVisibility}, ConverterParameter=Invert}">
+                    <materialDesign:PackIcon
+                        Kind="CloudUpload"
+                        Width="24" Height="24"
+                        VerticalAlignment="Center"
+                        Foreground="{DynamicResource PrimaryHueMidBrush}"
+                        Margin="0,0,10,0"/>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="Drop a TWB or TWBX file here" FontWeight="Medium"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,1,0,0">
+                            <TextBlock Text="or " Opacity="0.45" FontSize="11"/>
+                            <Button
+                                Content="browse for a file"
+                                Command="{Binding BrowseFileCommand}"
+                                Style="{StaticResource MaterialDesignFlatButton}"
+                                Padding="0" Height="Auto" FontSize="11"
+                                Foreground="{DynamicResource PrimaryHueMidBrush}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- File selected state -->
+                <StackPanel
+                    Orientation="Horizontal"
+                    Visibility="{Binding SelectedFilePath, Converter={StaticResource StringToVisibility}}">
+                    <materialDesign:PackIcon
+                        Kind="FileDocument"
+                        Width="22" Height="22"
+                        VerticalAlignment="Center"
+                        Foreground="{DynamicResource PrimaryHueMidBrush}"
+                        Margin="0,0,10,0"/>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock
+                            Text="{Binding SelectedFileName}"
+                            FontWeight="SemiBold" FontSize="13"/>
+                        <TextBlock
+                            Text="{Binding SelectedFilePath}"
+                            Opacity="0.45" FontSize="10"
+                            TextTrimming="CharacterEllipsis"
+                            MaxWidth="360"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Output Folder row -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox
+                Grid.Column="0"
+                Text="{Binding OutputDirectory, UpdateSourceTrigger=PropertyChanged}"
+                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                materialDesign:HintAssist.Hint="Output folder"
+                FontSize="12"/>
+
+            <Button
+                Grid.Column="2"
+                Content="BROWSE"
+                Command="{Binding BrowseOutputFolderCommand}"
+                Style="{StaticResource MaterialDesignOutlinedButton}"
+                FontSize="12"
+                Padding="14,0"/>
+        </Grid>
+
+        <!-- Status row — only visible when not idle -->
+        <Grid Grid.Row="4" Margin="0,0,0,10">
+
+            <!-- Processing -->
+            <StackPanel
+                Orientation="Horizontal"
+                Visibility="{Binding CurrentStatus, Converter={StaticResource EnumToVisibility}, ConverterParameter=Processing}">
+                <materialDesign:PackIcon Kind="Loading" Width="16" Height="16"
+                    VerticalAlignment="Center" Margin="0,0,6,0"
+                    Foreground="{DynamicResource PrimaryHueMidBrush}"/>
+                <TextBlock Text="{Binding StatusMessage}"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource MaterialDesignCaptionTextBlock}"
+                    Opacity="0.7"/>
+            </StackPanel>
+
+            <!-- Done -->
+            <StackPanel
+                Orientation="Horizontal"
+                Visibility="{Binding CurrentStatus, Converter={StaticResource EnumToVisibility}, ConverterParameter=Done}">
+                <materialDesign:PackIcon Kind="CheckCircle" Width="16" Height="16"
+                    VerticalAlignment="Center" Margin="0,0,6,0"
+                    Foreground="#4CAF50"/>
+                <TextBlock Text="{Binding StatusMessage}"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource MaterialDesignCaptionTextBlock}"
+                    Foreground="#4CAF50"/>
+            </StackPanel>
+
+            <!-- Error -->
+            <StackPanel
+                Orientation="Horizontal"
+                Visibility="{Binding CurrentStatus, Converter={StaticResource EnumToVisibility}, ConverterParameter=Error}">
+                <materialDesign:PackIcon Kind="AlertCircle" Width="16" Height="16"
+                    VerticalAlignment="Center" Margin="0,0,6,0"
+                    Foreground="#F44336"/>
+                <TextBlock Text="{Binding StatusMessage}"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource MaterialDesignCaptionTextBlock}"
+                    Foreground="#F44336"
+                    TextTrimming="CharacterEllipsis"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Generate Button -->
+        <Button
+            Grid.Row="5"
+            Content="GENERATE DOCUMENTATION"
+            Command="{Binding GenerateDocumentationCommand}"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            HorizontalAlignment="Stretch"
+            Height="40"
+            FontSize="13"
+            IsEnabled="{Binding CanGenerate}"/>
+    </Grid>
+</Window>
